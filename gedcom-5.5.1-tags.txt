@@ -20,7 +20,7 @@ An indicator to link different record descriptions of a person who may be the sa
 ANCE {ANCESTORS}:=
 Pertaining to forbearers of an individual.
 ANCI {ANCES_INTEREST}:=
-Indicates an interest in additional research for ancestors of this individual. (See also DESI, page 86.)
+Indicates an interest in additional research for ancestors of this individual. (See also DESI.)
 ANUL {ANNULMENT}:=
 Declaring a marriage void from the beginning (never existed).
 ASSO {ASSOCIATES}:=
@@ -31,8 +31,7 @@ BAPL {BAPTISM-LDS}:=
 The event of baptism performed at age eight or later by priesthood authority of the LDS Church. (See
 also BAPM, next)
 BAPM {BAPTISM}:=
-The event of baptism (not LDS), performed in infancy or later. (See also BAPL, above, and CHR, page
-85.)
+The event of baptism (not LDS), performed in infancy or later. (See also BAPL, and CHR.)
 BARM {BAR_MITZVAH}:=
 The ceremonial event held when a Jewish boy reaches age 13.
 BASM {BAS_MITZVAH}:=
@@ -103,8 +102,7 @@ The event when mortal life terminates.
 DESC {DESCENDANTS}:=
 Pertaining to offspring of an individual.
 DESI {DESCENDANT_INT}:=
-Indicates an interest in research to identify additional descendants of this individual. (See also ANCI,
-page 84.)
+Indicates an interest in research to identify additional descendants of this individual. (See also ANCI.)
 DEST {DESTINATION}:=
 A system receiving data.
 DIV {DIVORCE}:=
@@ -314,6 +312,6 @@ An individual in the role as a mother and/or married woman.
 WILL {WILL}:=
 A legal document treated as an event, by which a person disposes of his or her estate, to take effect
 after death. The event date is the date the will was signed while the person was alive. (See also
-PROBate, page 91.)
+PROBate.)
 WWW {WEB}:=
 World Wide Web home page.

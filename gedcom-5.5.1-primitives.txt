@@ -103,7 +103,7 @@ A code value that represents the character set to be used to interpret this data
 preferred character set is ANSEL, which includes ASCII as a subset. UNICODE is not widely
 supported by most operating systems; therefore, GEDCOM produced using the UNICODE character
 set will be limited in its interchangeability for a while but should eventually provide the international
-flexibility that is desired. See Chapter 3, starting on page 77.
+flexibility that is desired.
 Note:The IBMPC character set is not allowed. This character set cannot be interpreted properly
 without knowing which code page the sender was using.
 CHILD_LINKAGE_STATUS:= {Size=1:15}
@@ -168,15 +168,15 @@ DATE_EXACT:= {Size=10:11}
 DATE_FREN:= {Size=4:35}
 [ <YEAR>[B.C.] | <MONTH_FREN> <YEAR> |
  <DAY> <MONTH_FREN> <YEAR> ]
-See <MONTH_FREN> page 53
+See <MONTH_FREN>
 DATE_GREG:= {Size=4:35}
 [ <YEAR_GREG>[B.C.] | <MONTH> <YEAR_GREG> |
  <DAY> <MONTH> <YEAR_GREG> ]
-See <YEAR_GREG> page 65.
+See <YEAR_GREG>
 DATE_HEBR:= {Size=4:35}
 [ <YEAR>[B.C.] | <MONTH_HEBR> <YEAR> |
  <DAY> <MONTH_HEBR> <YEAR> ]
-See <MONTH_HEBR> page 53
+See <MONTH_HEBR>
 DATE_JULN:= {Size=4:35}
 [ <YEAR>[B.C.] | <MONTH> <YEAR> | <DAY> <MONTH> <YEAR> ]
 DATE_LDS_ORD:= {Size=4:35}
@@ -185,7 +185,7 @@ LDS ordinance dates use only the Gregorian date and most often use the form of d
 year. Only in rare instances is there a partial date. The temple tag and code should always accompany
 temple ordinance dates. Sometimes the LDS_(ordinance)_DATE_STATUS is used to indicate that an
 ordinance date and temple code is not required, such as when BIC is used. (See
-LDS_(ordinance)_DATE_STATUS definitions beginning on page 51.)
+LDS_(ordinance)_DATE_STATUS definitions.)
 DATE_PERIOD:= {Size=7:35}
 [
 FROM <DATE> |
@@ -302,7 +302,7 @@ EVENT_TYPE_FAMILY:= {Size=3:4}
 [ ANUL | CENS | DIV | DIVF | ENGA | MARR |
  MARB | MARC | MARL | MARS | EVEN ]
 A code used to indicate the type of family event.  The definition is the same as the corresponding
-event tag defined in Appendix A. (See Appendix A, starting on page 83).
+event tag.
 EVENT_TYPE_INDIVIDUAL:= {Size=3:4}
 [ ADOP | BIRT | BAPM | BARM | BASM |
  BLES | BURI | CENS | CHR | CHRA |
@@ -310,7 +310,7 @@ EVENT_TYPE_INDIVIDUAL:= {Size=3:4}
  GRAD | IMMI | NATU | ORDN |
  RETI | PROB | WILL | EVEN ]
  A code used to indicate the type of family event.  The definition is the same as the corresponding
-event tag defined in Appendix A. (See Appendix A, starting on page 83).
+event tag.
 EVENTS_RECORDED:= {Size=1:90}
 [<EVENT_ATTRIBUTE_TYPE> |
  <EVENTS_RECORDED>, <EVENT_ATTRIBUTE_TYPE>]
@@ -377,7 +377,7 @@ LDS_CHILD_SEALING_DATE_STATUS:= {Size=5:10}
  STILLBORN | SUBMITTED | UNCLEARED ]
 BIC = Born in the covenant receiving blessing of child to parent sealing.
 EXCLUDED = Patron excluded this ordinance from being cleared in this submission.
-PRE-1970 = (See pre-1970 under LDS_BAPTISM_DATE_STATUS on page 51.)
+PRE-1970 = (See pre-1970 under LDS_BAPTISM_DATE_STATUS.)
 STILLBORN = Stillborn, not required.
 SUBMITTED = Ordinance was previously submitted.
 UNCLEARED = Data for clearing ordinance request was insufficient.
@@ -389,7 +389,7 @@ CHILD = Died before eight years old.
 COMPLETED = Completed but the date is not known.
 EXCLUDED = Patron excluded this ordinance from being cleared in this submission.
 INFANT = Died before less than one year old, baptism or endowment not required.
-PRE-1970 = (See pre-1970 under LDS_BAPTISM_DATE_STATUS on page 51.)
+PRE-1970 = (See pre-1970 under LDS_BAPTISM_DATE_STATUS.)
 STILLBORN = Stillborn, ordinance not required.
 SUBMITTED = Ordinance was previously submitted.
 UNCLEARED = Data for clearing ordinance request was insufficient.
@@ -401,7 +401,7 @@ COMPLETED = Completed but the date is not known.
 EXCLUDED = Patron excluded this ordinance from being cleared in this submission.
 DNS = This ordinance is not authorized.
 DNS/CAN = This ordinance is not authorized, previous sealing cancelled.
-PRE-1970 = (See pre-1970 under LDS_BAPTISM_DATE_STATUS on page 51.)
+PRE-1970 = (See pre-1970 under LDS_BAPTISM_DATE_STATUS.)
 SUBMITTED = Ordinance was previously submitted.
 UNCLEARED = Data for clearing ordinance request was insufficient.
 MONTH:= {Size=3}
@@ -500,7 +500,7 @@ NAME_PHONETIC_VARIATION:= {Size=1:120}
 The phonetic variation of the name is written in the same form as the was the name used in the
 superior <NAME_PERSONAL> primitive, but phonetically written using the method indicated by the
 subordinate <PHONETIC_TYPE> value, for example if hiragana was used to provide a reading of a
-name written in kanji, then the <PHONETIC_TYPE> value would indicate ‘kana’. See page 57.
+name written in kanji, then the <PHONETIC_TYPE> value would indicate ‘kana’. See
 NAME_PIECE:=   {Size=1:90}
 The piece of the name pertaining to the name part of interest. The surname part, the given name part,
 the name prefix part, or the name suffix part.
@@ -536,7 +536,7 @@ The romanized variation of the name is written in the same form prescribed for t
 superior <NAME_PERSONAL> context. The method used to romanize the name is indicated by the
 line_value of the subordinate <ROMANIZED_TYPE>, for example if romaji was used to provide a
 reading of a name written in kanji, then the ROMANIZED_TYPE subordinate to the ROMN tag
-would indicate romaji. See page 61.
+would indicate romaji. See
 NAME_TEXT:= {Size=1:120}
 <TEXT> excluding commas, numbers, special characters not considered diacritics.
 NAME_TYPE:= {Size=5:30}
@@ -638,19 +638,19 @@ PLACE_NAME:= {Size=1:120}
 The jurisdictional name of the place where the event took place. Jurisdictions are separated by
 commas, for example, "Cove, Cache, Utah, USA." If the actual jurisdictional names of these places
 have been identified, they can be shown using a PLAC.FORM structure either in the HEADER or in
-the event structure. (See <PLACE_HIERARCHY>, page 58.)
+the event structure. (See <PLACE_HIERARCHY>.)
 PLACE_PHONETIC_VARIATION:= {Size=1:120}
 The phonetic variation of the place name is written in the same form as  was the place name used in
 the superior <PLACE_NAME> primitive, but phonetically written using the method indicated by the
 subordinate <PHONETIC_TYPE> value, for example if hiragana was used to provide a reading of a a
 name written in kanji, then the <PHONETIC_TYPE> value would indicate kana. (See
-<PHONETIC_TYPE> page 57.)
+<PHONETIC_TYPE>.)
 PLACE_ROMANIZED_VARIATION:= {Size=1:120}
 The romanized variation of the place name is written in the same form prescribed for the place name
 used in the superior <PLACE_NAME> context. The method used to romanize the name is indicated
 by the line_value of the subordinate <ROMANIZED_TYPE>, for example if romaji was used to
 provide a reading of a place name written in kanji, then the <ROMANIZED_TYPE> subordinate to
-the ROMN tag would indicate ‘romaji’. (See <ROMANIZED_TYPE> page 61.)
+the ROMN tag would indicate ‘romaji’. (See <ROMANIZED_TYPE>.)
 PLACE_TEXT:= {Size=1:120}
 <TEXT> excluding the comma(s).
 POSSESSIONS:= {Size=1:248}
@@ -781,8 +781,7 @@ submissions or inquiries by the submitter for identification purposes.
 SUBMITTER_TEXT:= {Size=1:248}
 Comments or opinions from the submitter.
 TEMPLE_CODE:= {Size=4:5}
-An abbreviation of the temple in which LDS temple ordinances were performed. (See Appendix B,
-page 96.)
+An abbreviation of the temple in which LDS temple ordinances were performed.
 TEXT:= {Size=1:248}
 A string composed of any valid character from the GEDCOM character set.
 TEXT_FROM_SOURCE:= {Size=1:248}
