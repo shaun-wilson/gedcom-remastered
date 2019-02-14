@@ -54,7 +54,7 @@ CHILD = age < 8 years
 INFANT = age < 1 year
 STILLBORN = died just prior, at, or near birth, 0 years
 A number that indicates the age in years, months, and days that the principal was at the time of the
-associated event. Any labels must come after their corresponding number, for example; 4y 8m 10d.
+associated event. Any labels must come after their corresponding number.
 ANCESTRAL_FILE_NUMBER:= {Size=1:12}
 A unique permanent record number of an individual record contained in the Family History
 Department's Ancestral File.
@@ -65,10 +65,7 @@ name must be unique from any other product. Spaces within the name must be subst
 ATTRIBUTE_DESCRIPTOR:= {Size=1:90}
 Text describing a particular characteristic or attribute assigned to an individual. This attribute value is
 assigned to the FACT tag.  The classification of this specific attribute or fact is specified by the value
-of the subordinate TYPE tag selected from the EVENT_DETAIL structure.  For example if you were
-classifying the skills a person had obtained;
-1 FACT Woodworking
-2 TYPE Skills
+of the subordinate TYPE tag selected from the EVENT_DETAIL structure.
 ATTRIBUTE_TYPE:= {Size=1:4}
 [ CAST | EDUC | NATI | OCCU | PROP | RELI | RESI | TITL | FACT ]
 An attribute which may have caused name, addresses, phone numbers, family listings to be recorded.
@@ -90,8 +87,7 @@ information, based upon its supporting evidence. Some systems use this feature t
 conflicting opinions for display of most likely information first. It is not intended to eliminate the
 receiver's need to evaluate the evidence for themselves.
 0 = Unreliable evidence or estimated data
-1 = Questionable reliability of evidence (interviews, census, oral genealogies, or potential for bias
-for example, an autobiography)
+1 = Questionable reliability of evidence
 2 = Secondary evidence, data officially recorded sometime after event
 3 = Direct and primary evidence used, or by dominance of the evidence
 CHANGE_DATE:= {Size=10:11}
@@ -104,8 +100,6 @@ preferred character set is ANSEL, which includes ASCII as a subset. UNICODE is n
 supported by most operating systems; therefore, GEDCOM produced using the UNICODE character
 set will be limited in its interchangeability for a while but should eventually provide the international
 flexibility that is desired.
-Note:The IBMPC character set is not allowed. This character set cannot be interpreted properly
-without knowing which code page the sender was using.
 CHILD_LINKAGE_STATUS:= {Size=1:15}
 [challenged | disproven | proven]
 A status code that allows passing on the users opinion of the status of a child to family link.
@@ -119,8 +113,6 @@ COPYRIGHT_GEDCOM_FILE:= {Size=1:90}
 A copyright statement needed to protect the copyrights of the submitter of this GEDCOM file.
 COPYRIGHT_SOURCE_DATA:= {Size=1:90}
 A copyright statement required by the owner of data from which this information was down- loaded.
-For example, when a GEDCOM down-load is requested from the Ancestral File, this would be the
-copyright statement to indicate that the data came from a copyrighted source.
 COUNT_OF_CHILDREN:= {Size=1:3}
 The known number of children of this individual from all marriages or, if subordinate to a family
 record, the reported number of children known to belong to this family, regardless of whether the
@@ -140,7 +132,7 @@ EST <DATE>
 ]
 Where:
 ABT = About, meaning the date is not exact.
-CAL = Calculated mathematically, for example, from an event date and age.
+CAL = Calculated mathematically.
 EST = Estimated based on an algorithm using some other event date.
 DATE_CALENDAR:= {Size=4:35}
 [ <DATE_GREG> | <DATE_JULN> | <DATE_HEBR> | <DATE_FREN> |
@@ -195,13 +187,6 @@ FROM <DATE> TO <DATE>
 Where:
 FROM = Indicates the beginning of a happening or state.
 TO = Indicates the ending of a happening or state.
-Examples:
-FROM 1904 to 1915
-= The state of some attribute existed from 1904 to 1915 inclusive.
-FROM 1904
-= The state of the attribute began in 1904 but the end date is unknown.
-TO 1915
-= The state ended in 1915 but the begin date is unknown.
 DATE_PHRASE:= {Size=1:35}
 <TEXT>
 Any statement offered as a date when the year is not recognizable to a date parser, but which gives
@@ -215,18 +200,9 @@ BET <DATE> AND <DATE>
 Where:
 AFT = Event happened after the given date.
 BEF = Event happened before the given date.
-BET = Event happened some time between date 1 AND date 2. For example, bet 1904 and 1915
-indicates that the event state (perhaps a single day) existed somewhere between 1904 and
-1915 inclusive.
+BET = Event happened some time between date 1 AND date 2.
 The date range differs from the date period in that the date range is an estimate that an event happened
 on a single date somewhere in the date range specified.
-The following are equivalent and interchangeable:
-Short form Long Form
-1852 BET 1 JAN 1852 AND 31 DEC 1852
-1852 BET 1 JAN 1852 AND DEC 1852
-1852 BET JAN 1852 AND 31 DEC 1852
-1852 BET JAN 1852 AND DEC 1852
-JAN 1920 BET 1 JAN 1920 AND 31 JAN 1920
 DATE_VALUE:= {Size=1:35}
 [
 <DATE> |
@@ -242,9 +218,7 @@ An acceptable alternative to the date phrase choice is to use one of the other c
 <DATE_APPROXIMATED> choice as the DATE line value and then include the date phrase value
 as a NOTE value subordinate to the DATE line tag.
 The date value can take on the date form of just a date, an approximated date, between a date and
-another date, and from one date to another date.  The preferred form of showing date imprecision, is
-to show, for example, MAY 1890 rather than ABT 12 MAY 1890.  This is because limits have not
-been assigned to the precision of the prefixes such as ABT or EST.
+another date, and from one date to another date.
 DAY:= {Size=1:2}
 dd
 Day of the month, where dd is a numeric digit whose value is within the valid range of the days for the
@@ -267,35 +241,17 @@ EVENT_DESCRIPTOR:= {Size=1:90}
 Text describing a particular event pertaining to the individual or family. This event value is usually
 assigned to the EVEN tag.  The classification as to the difference between this specific event and other
 occurrences of the EVENt tag is indicated by the use of a subordinate TYPE tag selected from the
-EVENT_DETAIL structure.  For example;
-1 EVEN Appointed Zoning Committee Chairperson
-2 TYPE Civic Appointments
-2 DATE FROM JAN 1952 TO JAN 1956
-2 PLAC Cove, Cache, Utah
-2 AGNC Cove City Redevelopment
+EVENT_DETAIL structure.
 EVENT_OR_FACT_CLASSIFICATION:= {Size=1:90}
 A descriptive word or phrase used to further classify the parent event or attribute tag. This should be
 used whenever either of  the generic EVEN or FACT tags are used. The value of this primative is
-responsible for classifying the generic event or fact being cited. For example, if the attribute being
-defined was one of the persons skills, such as woodworking, the FACT tag would have the value of
-`Woodworking', followed by a subordinate TYPE tag with the value `Skills.'
-1 FACT Woodworking
-2 TYPE Skills
-This groups the fact into a generic skills attribute, and in particular this entry records the fact that this
-individual possessed the skill of woodworking. Using the subordinate TYPE tag classification method
+responsible for classifying the generic event or fact being cited.
+Using the subordinate TYPE tag classification method
 with any of the other defined event tags provides a further classification of the parent tag but does not
-change the basic meaning of the parent tag. For example, a MARR tag could be subordinated with a
-TYPE tag with an EVENT_DESCRIPTOR value of `Common Law.'
-1 MARR
-2 TYPE Common Law
-This classifies the entry as a common law marriage but the event is still a marriage event. Other
-descriptor values might include, for example,`stillborn' as a qualifier to BIRTh or `Tribal Custom' as a
-qualifier to MARRiage.
+change the basic meaning of the parent tag.
 EVENT_TYPE_CITED_FROM:= {SIZE=1:15}
 [ <EVENT_ATTRIBUTE_TYPE> ]
-A code that indicates the type of event which was responsible for the source entry being recorded. For
-example, if the entry was created to record a birth of a child, then the type would be BIRT regardless
-of the assertions made from that record, such as the mother's name or mother's birth date. This will
+A code that indicates the type of event which was responsible for the source entry being recorded. This will
 allow a prioritized best view choice and a determination of the certainty associated with the source
 used in asserting the cited fact.
 EVENT_TYPE_FAMILY:= {Size=3:4}
@@ -471,9 +427,7 @@ The name of the software product that produced this transmission.
 NAME_OF_REPOSITORY:= {Size=1:90}
 The official name of the archive in which the stated source material is stored.
 NAME_OF_SOURCE_DATA:= {Size=1:90}
-The name of the electronic data source that was used to obtain the data in this transmission. For
-example, the data may have been obtained from a CD-ROM disc that was named "U.S. 1880
-CENSUS CD-ROM vol. 13."
+The name of the electronic data source that was used to obtain the data in this transmission.
 NAME_PERSONAL:= {Size=1:120}
 [
  <NAME_TEXT> |
@@ -488,19 +442,11 @@ giving it to a recorder. Early versions of Personal Ancestral File  ®  and othe
 trailing slash when the surname was the last element of the name. If part of name is illegible, that part
 is indicated by an ellipsis (...). Capitalize the name of a person or place in the conventional
 manner— capitalize the first letter of each part and lowercase the other letters, unless conventional
-usage is otherwise. For example: McMurray.
-Examples:
-William Lee (given name only or surname not known)
-/Parry/ (surname only)
-William Lee /Parry/
-William Lee /Mac Parry/ (both parts (Mac and Parry) are surname parts
-William /Lee/ Parry (surname imbedded in the name string)
-William Lee /Pa.../
+usage is otherwise.
 NAME_PHONETIC_VARIATION:= {Size=1:120}
 The phonetic variation of the name is written in the same form as the was the name used in the
 superior <NAME_PERSONAL> primitive, but phonetically written using the method indicated by the
-subordinate <PHONETIC_TYPE> value, for example if hiragana was used to provide a reading of a
-name written in kanji, then the <PHONETIC_TYPE> value would indicate ‘kana’. See
+subordinate <PHONETIC_TYPE> value.
 NAME_PIECE:=   {Size=1:90}
 The piece of the name pertaining to the name part of interest. The surname part, the given name part,
 the name prefix part, or the name suffix part.
@@ -514,34 +460,25 @@ NAME_PIECE_PREFIX:= {Size=1:30}
 [ <NAME_PIECE> | <NAME_PIECE_PREFIX>, <NAME_PIECE> ]
 Non indexing name piece that appears preceding the given name and surname parts. Different name
 prefix parts are separated by a comma.
-For example:
-Lt. Cmndr. Joseph /Allen/ jr.
-In this example Lt. Cmndr. is considered as the name prefix portion.
 NAME_PIECE_SUFFIX:= {Size=1:30}
 [ <NAME_PIECE> | <NAME_PIECE_SUFFIX>, <NAME_PIECE> ]
 Non-indexing name piece that appears after the given name and surname parts. Different name suffix
 parts are separated by a comma.
-For example:
-Lt. Cmndr. Joseph /Allen/ jr.
-In this example jr. is considered as the name suffix portion.
 NAME_PIECE_SURNAME:= {Size=1:120}
 [ <NAME_PIECE> | <NAME_PIECE_SURNAME>, <NAME_PIECE> ]
 Surname or family name. Different surnames are separated by a comma.
 NAME_PIECE_SURNAME_PREFIX:= {Size=1:30}
 [ <NAME_PIECE> | <NAME_PIECE_SURNAME_PREFIX>, <NAME_PIECE> ]
-Surname prefix or article used in a family name. Different surname articles are separated by a comma,
-for example in the name "de la Cruz", this value would be "de, la".
+Surname prefix or article used in a family name. Different surname articles are separated by a comma.
 NAME_ROMANIZED_VARIATION:= {Size=1:120}
 The romanized variation of the name is written in the same form prescribed for the name used in the
 superior <NAME_PERSONAL> context. The method used to romanize the name is indicated by the
-line_value of the subordinate <ROMANIZED_TYPE>, for example if romaji was used to provide a
-reading of a name written in kanji, then the ROMANIZED_TYPE subordinate to the ROMN tag
-would indicate romaji. See
+line_value of the subordinate <ROMANIZED_TYPE>.
 NAME_TEXT:= {Size=1:120}
 <TEXT> excluding commas, numbers, special characters not considered diacritics.
 NAME_TYPE:= {Size=5:30}
 [ aka | birth | immigrant | maiden | married | <user defined>]
-Indicates the name type, for example the name issued or assumed as an immigrant.
+Indicates the name type.
 aka = also known as, alias, etc.
 birth = name given on birth certificate.
 immigrant = name assumed at the time of immigration.
@@ -552,13 +489,8 @@ NATIONAL_ID_NUMBER:= {Size=1:30}
 A nationally-controlled number assigned to an individual. Commonly known national numbers should
 be assigned their own tag, such as SSN for U.S. Social Security Number. The use of the IDNO tag
 requires a subordinate TYPE tag to identify what kind of number is being stored.
-For example:
-n IDNO 43-456-1899
-+1 TYPE Canadian Health Registration
 NATIONAL_OR_TRIBAL_ORIGIN:= {Size=1:120}
 The person's division of national origin or other folk, house, kindred, lineage, or tribal interest.
-Examples: Irish, Swede, Egyptian Coptic, Sioux Dakota Rosebud, Apache Chiricawa, Navajo Bitter
-Water, Eastern Cherokee Taliwa Wolf, and so forth.
 NEW_TAG:= {Size=1:15}
 A user-defined tag that is contained in the GEDCOM current transmission. This tag must begin with
 an underscore (_) and should only be interpreted in the context of the sending system.
@@ -603,9 +535,6 @@ japanese
 PHYSICAL_DESCRIPTION:= {Size=1:248}
 An unstructured list of the attributes that describe the physical characteristics of a person, place, or
 object. Commas separate each attribute.
-Example:
-1 DSCR Hair Brown, Eyes Brown, Height 5 ft 8 in
-2 DATE 23 JUL 1935
 PLACE_HIERARCHY:= {Size=1:120}
 This shows the jurisdictional entities that are named in a sequence from the lowest to the highest
 jurisdiction. The jurisdictions are separated by commas, and any jurisdiction's name that is missing is
@@ -618,39 +547,31 @@ only be used when a system has over-structured its place-names.
 PLACE_LATITUDE:= {Size=5:8}
 The value specifying the latitudinal coordinate of the place name. The latitude coordinate is the
 direction North or South from the equator in degrees and fraction of degrees carried out to give the
-desired accuracy. For example:  18 degrees, 9 minutes, and 3.4 seconds North would be formatted as
-N18.150944.  Minutes and seconds are converted by dividing the minutes value by 60 and the seconds
-value by 3600 and adding the results together. This sum becomes the fractional part of the degree’s
-value.
+desired accuracy.
 PLACE_LIVING_ORDINANCE:= {Size=1:120}
 <PLACE_NAME>
 The locality of the place where a living LDS ordinance took place.  Typically, a living LDS baptism
 place would be recorded in this field.
 PLACE_LONGITUDE:= {Size=5:8}
 The value specifying the longitudinal coordinate of the place name. The longitude coordinate is
-Degrees and fraction of degrees east or west of the zero or base meridian coordinate. For example:
-168 degrees, 9 minutes, and 3.4 seconds East would be formatted as E168.150944.
+Degrees and fraction of degrees east or west of the zero or base meridian coordinate.
 PLACE_NAME:= {Size=1:120}
 [
  <PLACE_TEXT> |
  <PLACE_TEXT>, <PLACE_NAME>
 ]
 The jurisdictional name of the place where the event took place. Jurisdictions are separated by
-commas, for example, "Cove, Cache, Utah, USA." If the actual jurisdictional names of these places
+commas. If the actual jurisdictional names of these places
 have been identified, they can be shown using a PLAC.FORM structure either in the HEADER or in
 the event structure. (See <PLACE_HIERARCHY>.)
 PLACE_PHONETIC_VARIATION:= {Size=1:120}
 The phonetic variation of the place name is written in the same form as  was the place name used in
 the superior <PLACE_NAME> primitive, but phonetically written using the method indicated by the
-subordinate <PHONETIC_TYPE> value, for example if hiragana was used to provide a reading of a a
-name written in kanji, then the <PHONETIC_TYPE> value would indicate kana. (See
-<PHONETIC_TYPE>.)
+subordinate <PHONETIC_TYPE> value.
 PLACE_ROMANIZED_VARIATION:= {Size=1:120}
 The romanized variation of the place name is written in the same form prescribed for the place name
 used in the superior <PLACE_NAME> context. The method used to romanize the name is indicated
-by the line_value of the subordinate <ROMANIZED_TYPE>, for example if romaji was used to
-provide a reading of a place name written in kanji, then the <ROMANIZED_TYPE> subordinate to
-the ROMN tag would indicate ‘romaji’. (See <ROMANIZED_TYPE>.)
+by the line_value of the subordinate <ROMANIZED_TYPE>.
 PLACE_TEXT:= {Size=1:120}
 <TEXT> excluding the comma(s).
 POSSESSIONS:= {Size=1:248}
@@ -673,27 +594,19 @@ REGISTERED_RESOURCE_IDENTIFIER:= {Size=1:25}
 This is an identifier assigned to a resource database that is available through access to a network. This
 is for future GEDCOM releases.
 RELATION_IS_DESCRIPTOR:= {Size=1:25}
-A word or phrase that states object 1's relation is object 2. For example you would read the following
-as "Joe Jacob's great grandson is the submitter pointed to by the @XREF:SUBM@":
-0 INDI
-1 NAME Joe /Jacob/
-1 ASSO @<XREF:SUBM>@
-2 RELA great grandson
+A word or phrase that states object 1's relation is object 2.
 RELIGIOUS_AFFILIATION:= {Size=1:90}
 A name of the religion with which this person, event, or record was affiliated.
 RESPONSIBLE_AGENCY:= {Size=1:120}
 The organization, institution, corporation, person, or other entity that has responsibility for the
-associated context. For example, an employer of a person of an associated occupation, or a church
-that administered rites or events, or an organization responsible for creating and/or archiving records.
+associated context.
 RESTRICTION_NOTICE:= {Size=6:7}
 [confidential | locked | privacy ]
 The restriction notice is defined for Ancestral File usage.  Ancestral File download GEDCOM files
 may contain this data.
 Where:
 confidential = This data was marked as confidential by the user.  In some systems data marked as
-confidential will be treated differently, for example, there might be an option that
-would stop confidential data from appearing on printed reports or would prevent that
-information from being exported.
+confidential will be treated differently.
 locked = Some records in Ancestral File have been satisfactorily proven by evidence, but
 because of source conflicts or incorrect traditions, there are repeated attempts to
 change this record. By arrangement, the Ancestral File Custodian can lock a record so
@@ -701,9 +614,7 @@ that it cannot be changed without an agreement from the person assigned as the
 steward of such a record. The assigned steward is either the submitter listed for the
 record or Family History Support when no submitter is listed.
 privacy = Indicate that information concerning this record is not present due to rights of or an
-approved request for privacy. For example, data from requested downloads of the
-Ancestral File may have individuals marked with ‘privacy’ if they are assumed living,
-that is they were born within the last 110 years and there isn’t a death date.  In certain
+approved request for privacy. In certain
 cases family records may also be marked with the RESN tag of privacy if either
 individual acting in the role of HUSB or WIFE is assumed living.
 ROLE_DESCRIPTOR:= {Size=1:25}
@@ -712,10 +623,7 @@ word or phrase, and in the same language, that the recorder used to define the r
 record.
 ROLE_IN_EVENT:= {Size=1:15}
 [ CHIL | HUSB | WIFE | MOTH | FATH | SPOU | (<ROLE_DESCRIPTOR>) ]
-Indicates what role this person played in the event that is being cited in this context. For example, if
-you cite a child's birth record as the source of the mother's name, the value for this field is "MOTH." If
-you describe the groom of a marriage, the role is "HUSB." If the role is something different than one
-of the six relationship role tags listed above then enclose the role name within matching parentheses.
+Indicates what role this person played in the event that is being cited in this context.
 ROMANIZED_TYPE:= {Size=5:30}
 [<user defined> | pinyin | romaji | wadegiles]
 Indicates the method used in transforming the text to a romanized variation.
@@ -741,23 +649,11 @@ reporting bibliographic reference descriptions.
 SOURCE_DESCRIPTIVE_TITLE:= {Size=1:248}
 The title of the work, record, or item and, when appropriate, the title of the larger work or series of
 which it is a part.
-For a published work, a book for example, might have a title plus the title of the series of which the
-book is a part. A magazine article would have a title plus the title of the magazine that published the
-article.
-For An unpublished work, such as:
-! A letter might include the date, the sender, and the receiver.
-! A transaction between a buyer and seller might have their names and the transaction date.
-! A family Bible containing genealogical information might have past and present owners and a
-physical description of the book.
-! A personal interview would cite the informant and interviewer.
 SOURCE_FILED_BY_ENTRY:= {Size= 1:60}
 This entry is to provide a short title used for sorting, filing, and retrieving source records.
 SOURCE_JURISDICTION_PLACE:= {Size=1:120}
 <PLACE_NAME>
-The name of the lowest jurisdiction that encompasses all lower-level places named in this source.  For
-example, "Oneida, Idaho" would be used as a source jurisdiction place for events occurring in the
-various towns within Oneida County. "Idaho" would be the source jurisdiction place if the events
-recorded took place in other counties as well as Oneida County.
+The name of the lowest jurisdiction that encompasses all lower-level places named in this source.
 SOURCE_MEDIA_TYPE:= {Size=1:15}
 [ audio | book | card | electronic | fiche | film | magazine |
  manuscript | map | newspaper | photo | tombstone | video ]
@@ -771,8 +667,7 @@ SOURCE_PUBLICATION_FACTS:= {Size=1:248}
 When and where the record was created. For published works, this includes information such as the
 city of publication, name of the publisher, and year of publication.
 For an unpublished work, it includes the date the record was created and the place where it was
-created. For example, the county and state of residence of a person making a declaration for a pension
-or the city and state of residence of the writer of a letter.
+created.
 SUBMITTER_NAME:= {Size=1:60}
 The name of the submitter formatted for display and address generation.
 SUBMITTER_REGISTERED_RFN:= {Size=1:30}
@@ -817,13 +712,12 @@ issue, and page numbers. For a newspaper, it could include a column number and p
 unpublished source or microfilmed works, this could be a film or sheet number, page number, frame
 number, etc. A census record might have an enumerating district, page number, line number, dwelling
 number, and family number.  The data in this field should be in the form of a label and value pair, such
-as Label1: value, Label2: value, with each pair being separated by a comma. For example, Film:
-1234567, Frame: 344, Line: 28.
+as Label1: value, Label2: value, with each pair being separated by a comma.
 XREF:= {Size=1:22}
 Either a pointer or an unique cross-reference identifier. If this element appears before the tag in a
 GEDCOM line, then it is a cross-reference identifier. If it appears after the tag in a GEDCOM line,
 then it is a pointer. The method of delimiting a pointer or cross-reference identifier is to enclose the
-pointer or cross-reference identifier within at signs (@), for example, @I123@. A XREF may not
+pointer or cross-reference identifier within at signs (@). A XREF may not
 begin with a number sign (#). This is to avoid confusion with an escape sequence prefix (@#). The use
 of a colon (:) in the XREF is reserved for creating future network cross-references and the use of an
 exclamation (!) is reserved for intra-record pointers. Uniqueness of the cross-reference identifier is
@@ -850,5 +744,5 @@ YEAR_GREG:= {Size=3:7}
 [ <NUMBER> | <NUMBER>/<DIGIT><DIGIT> ]
 The slash "/" <DIGIT><DIGIT> a year modifier which shows the possible date alternatives for pre-
 1752 date brought about by a changing the beginning of the year from MAR to JAN in the English
-calendar change of 1752, for example, 15 APR 1699/00. A (B.C.) appended to the <YEAR> indicates
+calendar change of 1752. A (B.C.) appended to the <YEAR> indicates
 a date before the birth of Christ.

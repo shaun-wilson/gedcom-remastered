@@ -26,16 +26,9 @@ n HEAD {1:1}
 +2 FORM <PLACE_HIERARCHY> {1:1}
 +1 NOTE <GEDCOM_CONTENT_DESCRIPTION> {0:1}
 +2 [CONC|CONT] <GEDCOM_CONTENT_DESCRIPTION> {0:M}
-* NOTE:
-Submissions to the Family History Department for Ancestral File submission or for clearing temple ordinances  must use a
-DESTination of ANSTFILE or TempleReady, respectively.
 The header structure provides information about the entire transmission. The SOURce system name
 identifies which system sent the data. The DESTination system name identifies the intended receiving
 system.
-Additional GEDCOM standards will be produced in the future to reflect GEDCOM expansion and
-maturity. This requires the reading program to make sure it can read the GEDC.VERS and the
-GEDC.FORM values to insure proper readability. The CHAR tag is required. All character codes
-greater than 0x7F must be converted to ANSEL.
 RECORD:=
 [
 n <<FAM_RECORD>> {1:1}
@@ -115,11 +108,7 @@ to an adoption event indicates a relationship to family by adoption. Biological 
 by a FAMC pointer subordinate to the birth event(optional).
 Other associations or relationships are represented by the ASSOciation tag.  The person's relation
 or association is the person being pointed to. The association or relationship is stated by the value
-on the subordinate RELA line.   For example:
-0 @I1@ INDI
-1 NAME Fred/Jones/
-1 ASSO @I2@
-2 RELA Godfather
+on the subordinate RELA line.
 MULTIMEDIA_RECORD:=
 n @XREF:OBJE@ OBJE {1:1}
 +1 FILE <MULTIMEDIA_FILE_REFN> {1:M}
@@ -132,11 +121,6 @@ n @XREF:OBJE@ OBJE {1:1}
 +1 <<NOTE_STRUCTURE>> {0:M}
 +1 <<SOURCE_CITATION>> {0:M}
 +1 <<CHANGE_DATE>> {0:1}
-The BLOB context of the multimedia record was removed in version 5.5.1. A reference to a multimedia
-file was added to the record structure.  The file reference occurs one to many times so that multiple files
-can be grouped together, each pertaining to the same context. For example, if you wanted to associate a
-sound clip and a photo, you would reference each multimedia file and indicate the format using the
-FORM tag subordinate to each file reference.
 NOTE_RECORD:=
 n @<XREF:NOTE>@ NOTE <SUBMITTER_TEXT> {1:1}
 +1 [CONC|CONT] <SUBMITTER_TEXT> {0:M}
@@ -211,4 +195,3 @@ The submitter record identifies an individual or organization that contributed i
 in the GEDCOM transmission. All records in the transmission are assumed to be submitted by the
 SUBMITTER referenced in the HEADer, unless a SUBMitter reference inside a specific record
 points at a different SUBMITTER record.
-* Note: submissions to the ancestral file require the name and address of the submitter.
