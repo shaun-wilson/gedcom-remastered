@@ -47,7 +47,7 @@ CALN {CALL_NUMBER}:=
 The number used by a repository to identify the specific items in its collections.
 CAST {CASTE}:=
 The name of an individual's rank or status in society which is sometimes based on racial or religious
-differences, or differences in wealth, inherited  rank, profession, occupation, etc.
+differences, or differences in wealth, inherited rank, profession, occupation, etc.
 CAUS {CAUSE}:=
 A description of the cause of the associated event or fact, such as the cause of death.
 CENS {CENSUS}:=
@@ -65,12 +65,12 @@ The religious event (not LDS) of baptizing and/or naming a child.
 CHRA {ADULT_CHRISTENING}:=
 The religious event (not LDS) of baptizing and/or naming an adult person.
 CITY {CITY}:=
-A lower level jurisdictional unit.  Normally an incorporated municipal unit.
+A lower level jurisdictional unit. Normally an incorporated municipal unit.
 CONC {CONCATENATION}:=
 An indicator that additional data belongs to the superior value. The information from the CONC value
 is to be connected to the value of the superior preceding line without a space and without a carriage
 return and/or new line character. Values that are split for a CONC tag must always be split at a non-
-space.  If the value is split on a space the space will be lost when concatenation takes place.  This is
+space. If the value is split on a space the space will be lost when concatenation takes place. This is
 because of the treatment that spaces get as a GEDCOM delimiter, many GEDCOM values are trimmed
 of trailing spaces and some systems look for the first non-space starting after the tag to determine the
 beginning of the value.
@@ -146,11 +146,11 @@ FILE {FILE}:=
 An information storage place that is ordered and arranged for preservation and reference.
 FORM {FORMAT}:=
 An assigned name given to a consistent format in which information can be conveyed.
-FONE {PHONETIC}
+FONE {PHONETIC}:=
 A phonetic variation of a superior text string
 GEDC {GEDCOM}:=
 Information about the use of GEDCOM in a transmission.
-GIVN {GIVEN_NAME}
+GIVN {GIVEN_NAME}:=
 A given or earned name used for official identification of a person.
 GRAD {GRADUATION}:=
 An event of awarding educational diplomas or degrees to individuals.
@@ -171,7 +171,7 @@ A value indicating a coordinate position on a line, plane, or space.
 LONG {LONGITUDE}:=
 A value indicating a coordinate position on a line, plane, or space.
 MAP {MAP}:=
-Pertains to a representation of  measurements usually presented in a graphical form.
+Pertains to a representation of measurements usually presented in a graphical form.
 MARB {MARRIAGE_BANN}:=
 An event of an official public notice given that two people intend to marry.
 MARC {MARR_CONTRACT}:=
@@ -209,7 +209,7 @@ Text which appears on a name line before the given and surname parts of a name.
 NSFX {NAME_SUFFIX}:=
 Text which appears on a name line after or behind the given and surname parts of a name.
 OBJE {OBJECT}:=
-Pertaining to a grouping of attributes used in describing something.  Usually referring to the data
+Pertaining to a grouping of attributes used in describing something. Usually referring to the data
 required to represent a multimedia object, such an audio recording, a photograph of a person, or an
 image of a document.
 OCCU {OCCUPATION}:=

@@ -13,16 +13,16 @@ When it is used subordinate to an event tag it is the address of the place where
 The address lines usually contain the addressee’s name and other street and city information so that it
 forms an address that meets mailing requirements.
 ADDRESS_LINE1:= {Size=1:60}
-The first line of the address used for indexing.  This is the value of the line corresponding to the
+The first line of the address used for indexing. This is the value of the line corresponding to the
 ADDR tag line in the address structure.
 ADDRESS_LINE2:= {Size=1:60}
-The second line of the address used for indexing.  This is the value of the first CONT line subordinate
+The second line of the address used for indexing. This is the value of the first CONT line subordinate
 to the ADDR tag in the address structure.
 ADDRESS_LINE3:= {Size=1:60}
-The third line of the address used for indexing.  This is the value of the second CONT line subordinate
+The third line of the address used for indexing. This is the value of the second CONT line subordinate
 to the ADDR tag in the address structure.
 ADDRESS_POSTAL_CODE:= {Size=1:10}
-The ZIP or postal code used by the various localities in handling of mail.  Isolated for sorting or
+The ZIP or postal code used by the various localities in handling of mail. Isolated for sorting or
 indexing.
 ADDRESS_STATE:= {Size=1:60}
 The name of the state used in the address. Isolated for sorting or indexing.
@@ -36,10 +36,10 @@ HUSB = The HUSBand in the associated family adopted this person.
 WIFE = The WIFE in the associated family adopted this person.
 BOTH = Both HUSBand and WIFE adopted this person.
 AGE_AT_EVENT:= {Size=1:12}
-[ < | > | <NULL>]
+[ < | > | <NULL> ]
 [ YYy MMm DDDd | YYy | MMm | DDDd |
  YYy MMm | YYy DDDd | MMm DDDd |
- CHILD | INFANT | STILLBORN ]
+ CHILD | INFANT | STILLBORN
 ]
 Where:
 > = greater than indicated age
@@ -64,14 +64,14 @@ name must be unique from any other product. Spaces within the name must be subst
 (underscore _) so as to create one word.
 ATTRIBUTE_DESCRIPTOR:= {Size=1:90}
 Text describing a particular characteristic or attribute assigned to an individual. This attribute value is
-assigned to the FACT tag.  The classification of this specific attribute or fact is specified by the value
+assigned to the FACT tag. The classification of this specific attribute or fact is specified by the value
 of the subordinate TYPE tag selected from the EVENT_DETAIL structure.
 ATTRIBUTE_TYPE:= {Size=1:4}
 [ CAST | EDUC | NATI | OCCU | PROP | RELI | RESI | TITL | FACT ]
 An attribute which may have caused name, addresses, phone numbers, family listings to be recorded.
 Its application is in helping to classify sources used for information.
 AUTOMATED_RECORD_ID:= {Size=1:12}
-A unique record identification number assigned to the record by the source system.  This number is
+A unique record identification number assigned to the record by the source system. This number is
 intended to serve as a more sure means of identification of a record for reconciling differences in data
 between two interfacing systems.
 CASTE_NAME:= {Size=1:90}
@@ -94,18 +94,18 @@ CHANGE_DATE:= {Size=10:11}
 <DATE_EXACT>
 The date that this data was changed.
 CHARACTER_SET:= {Size=1:8}
-[ ANSEL |UTF-8 | UNICODE | ASCII ]
+[ ANSEL | UTF-8 | UNICODE | ASCII ]
 A code value that represents the character set to be used to interpret this data. Currently, the
 preferred character set is ANSEL, which includes ASCII as a subset. UNICODE is not widely
 supported by most operating systems; therefore, GEDCOM produced using the UNICODE character
 set will be limited in its interchangeability for a while but should eventually provide the international
 flexibility that is desired.
 CHILD_LINKAGE_STATUS:= {Size=1:15}
-[challenged | disproven | proven]
+[ challenged | disproven | proven ]
 A status code that allows passing on the users opinion of the status of a child to family link.
 challenged = Linking this child to this family is suspect, but the linkage has been neither proven nor
 disproven.
-disproven  = There has been a claim by some that this child belongs to this family, but the linkage
+disproven = There has been a claim by some that this child belongs to this family, but the linkage
 has been disproven.
 proven = There has been a claim by some that this child does not belongs to this family, but the
 linkage has been proven.
@@ -122,7 +122,7 @@ COUNT_OF_MARRIAGES:= {Size=1:3}
 The number of different families that this person was known to have been a member of as a spouse or
 parent, regardless of whether the associated families are represented in the GEDCOM file.
 DATE:= {Size=4:35}
-[ <DATE_CALENDAR_ESCAPE> | <NULL>]
+[ <DATE_CALENDAR_ESCAPE> | <NULL> ]
 <DATE_CALENDAR>
 DATE_APPROXIMATED:= {Size=4:35}
 [
@@ -138,8 +138,8 @@ DATE_CALENDAR:= {Size=4:35}
 [ <DATE_GREG> | <DATE_JULN> | <DATE_HEBR> | <DATE_FREN> |
  <DATE_FUTURE> ]
 The selection is based on the <DATE_CALENDAR_ESCAPE> that precedes the
-<DATE_CALENDAR> value immediately to the left.  If <DATE_CALENDAR_ESCAPE> doesn't
-appear at this point, then @#DGREGORIAN@ is assumed.  No future calendar types will use words
+<DATE_CALENDAR> value immediately to the left. If <DATE_CALENDAR_ESCAPE> doesn't
+appear at this point, then @#DGREGORIAN@ is assumed. No future calendar types will use words
 (e.g., month names) from this list: FROM, TO, BEF, AFT, BET, AND, ABT, EST, CAL, or INT.
 When only a day and month appears as a DATE value it is considered a date phrase and not a valid
 date form.
@@ -149,7 +149,7 @@ Date Escape Syntax Selected
 @#DHEBREW@ <DATE_HEBR>
 @#DFRENCH R@ <DATE_FREN>
 @#DROMAN@ for future definition
-@#DUNKNOWN@  calendar not known
+@#DUNKNOWN@ calendar not known
 DATE_CALENDAR_ESCAPE:= {Size=4:15}
 [ @#DHEBREW@ | @#DROMAN@ | @#DFRENCH R@ | @#DGREGORIAN@ |
  @#DJULIAN@ | @#DUNKNOWN@ ]
@@ -207,7 +207,7 @@ DATE_VALUE:= {Size=1:35}
 [
 <DATE> |
 <DATE_PERIOD> |
-<DATE_RANGE>|
+<DATE_RANGE> |
 <DATE_APPROXIMATED> |
 INT <DATE> (<DATE_PHRASE>) |
 (<DATE_PHRASE>)
@@ -235,21 +235,21 @@ EVENT_ATTRIBUTE_TYPE:= {Size=1:15}
  <EVENT_TYPE_FAMILY> |
  <ATTRIBUTE_TYPE> ]
 A code that classifies the principal event or happening that caused the source record entry to be
-created.  If the event or attribute doesn't translate to one of these tag codes, then a user supplied value
+created. If the event or attribute doesn't translate to one of these tag codes, then a user supplied value
 is expected and will be generally classified in the category of other.
 EVENT_DESCRIPTOR:= {Size=1:90}
 Text describing a particular event pertaining to the individual or family. This event value is usually
-assigned to the EVEN tag.  The classification as to the difference between this specific event and other
+assigned to the EVEN tag. The classification as to the difference between this specific event and other
 occurrences of the EVENt tag is indicated by the use of a subordinate TYPE tag selected from the
 EVENT_DETAIL structure.
 EVENT_OR_FACT_CLASSIFICATION:= {Size=1:90}
 A descriptive word or phrase used to further classify the parent event or attribute tag. This should be
-used whenever either of  the generic EVEN or FACT tags are used. The value of this primative is
+used whenever either of the generic EVEN or FACT tags are used. The value of this primative is
 responsible for classifying the generic event or fact being cited.
 Using the subordinate TYPE tag classification method
 with any of the other defined event tags provides a further classification of the parent tag but does not
 change the basic meaning of the parent tag.
-EVENT_TYPE_CITED_FROM:= {SIZE=1:15}
+EVENT_TYPE_CITED_FROM:= {Size=1:15}
 [ <EVENT_ATTRIBUTE_TYPE> ]
 A code that indicates the type of event which was responsible for the source entry being recorded. This will
 allow a prioritized best view choice and a determination of the certainty associated with the source
@@ -257,7 +257,7 @@ used in asserting the cited fact.
 EVENT_TYPE_FAMILY:= {Size=3:4}
 [ ANUL | CENS | DIV | DIVF | ENGA | MARR |
  MARB | MARC | MARL | MARS | EVEN ]
-A code used to indicate the type of family event.  The definition is the same as the corresponding
+A code used to indicate the type of family event. The definition is the same as the corresponding
 event tag.
 EVENT_TYPE_INDIVIDUAL:= {Size=3:4}
 [ ADOP | BIRT | BAPM | BARM | BASM |
@@ -265,11 +265,11 @@ EVENT_TYPE_INDIVIDUAL:= {Size=3:4}
  CONF | CREM | DEAT | EMIG | FCOM |
  GRAD | IMMI | NATU | ORDN |
  RETI | PROB | WILL | EVEN ]
- A code used to indicate the type of family event.  The definition is the same as the corresponding
+ A code used to indicate the type of family event. The definition is the same as the corresponding
 event tag.
 EVENTS_RECORDED:= {Size=1:90}
-[<EVENT_ATTRIBUTE_TYPE> |
- <EVENTS_RECORDED>, <EVENT_ATTRIBUTE_TYPE>]
+[ <EVENT_ATTRIBUTE_TYPE> |
+ <EVENTS_RECORDED>, <EVENT_ATTRIBUTE_TYPE> ]
 An enumeration of the different kinds of events that were recorded in a particular source. Each
 enumeration is separated by a comma. Such as a parish register of births, deaths, and marriages would
 be BIRT, DEAT, MARR.
@@ -284,7 +284,7 @@ GEDCOM_FORM:= {Size=14:20}
 [ LINEAGE-LINKED ]
 The GEDCOM form used to construct this transmission. There maybe other forms used such as
 CommSoft's "EVENT_LINEAGE_LINKED" but these specifications define only the LINEAGE-
-LINKED Form.  Systems will use this value to specify GEDCOM compatible with these
+LINKED Form. Systems will use this value to specify GEDCOM compatible with these
 specifications.
 GENERATIONS_OF_ANCESTORS:= {Size=1:4}
 The number of generations of ancestors included in this transmission. This value is usually provided
@@ -308,12 +308,12 @@ Rajasthani | Russian | Sanskrit | Serb | Tagalog | Tamil | Telugu | Thai | Tibet
 Vietnamese | Yiddish ]
 LANGUAGE_OF_TEXT:= {Size=1:15}
 [ <LANGUAGE_ID> ]
-The human language in which the data in the transmission is normally read or written.  It is used
+The human language in which the data in the transmission is normally read or written. It is used
 primarily by programs to select language-specific sorting sequences and phonetic name matching
 algorithms.
 LANGUAGE_PREFERENCE:= {Size=1:90}
 [ <LANGUAGE_ID> ]
-The language in which a person prefers to communicate.  Multiple language preference is shown by
+The language in which a person prefers to communicate. Multiple language preference is shown by
 using multiple occurrences in order of priority.
 LDS_BAPTISM_DATE_STATUS:= {Size=5:10}
 [ CHILD | COMPLETED | EXCLUDED | PRE-1970 |
@@ -438,7 +438,7 @@ NAME_PERSONAL:= {Size=1:120}
 ]
 The surname of an individual, if known, is enclosed between two slash (/) characters. The order of the
 name parts should be the order that the person would, by custom of their culture, have used when
-giving it to a recorder. Early versions of Personal Ancestral File  ®  and other products did not use the
+giving it to a recorder. Early versions of Personal Ancestral File ® and other products did not use the
 trailing slash when the surname was the last element of the name. If part of name is illegible, that part
 is indicated by an ellipsis (...). Capitalize the name of a person or place in the conventional
 manner— capitalize the first letter of each part and lowercase the other letters, unless conventional
@@ -447,7 +447,7 @@ NAME_PHONETIC_VARIATION:= {Size=1:120}
 The phonetic variation of the name is written in the same form as the was the name used in the
 superior <NAME_PERSONAL> primitive, but phonetically written using the method indicated by the
 subordinate <PHONETIC_TYPE> value.
-NAME_PIECE:=   {Size=1:90}
+NAME_PIECE:= {Size=1:90}
 The piece of the name pertaining to the name part of interest. The surname part, the given name part,
 the name prefix part, or the name suffix part.
 NAME_PIECE_GIVEN:= {Size=1:120}
@@ -477,14 +477,14 @@ line_value of the subordinate <ROMANIZED_TYPE>.
 NAME_TEXT:= {Size=1:120}
 <TEXT> excluding commas, numbers, special characters not considered diacritics.
 NAME_TYPE:= {Size=5:30}
-[ aka | birth | immigrant | maiden | married | <user defined>]
+[ aka | birth | immigrant | maiden | married | <user defined> ]
 Indicates the name type.
 aka = also known as, alias, etc.
 birth = name given on birth certificate.
 immigrant = name assumed at the time of immigration.
 maiden = maiden name, name before first marriage.
 married = name was persons previous married name.
-user_defined= other text name that defines the name type.
+user_defined = other text name that defines the name type.
 NATIONAL_ID_NUMBER:= {Size=1:30}
 A nationally-controlled number assigned to an individual. Commonly known national numbers should
 be assigned their own tag, such as SSN for U.S. Social Security Number. The use of the IDNO tag
@@ -500,7 +500,7 @@ NULL:= {Size=0:0}
 A convention that indicates the absence of any 8-bit ASCII character in the value including the null
 character (0x00) which is prohibited.
 NUMBER:=
-[<DIGIT> | <NUMBER>+<DIGIT>]
+[ <DIGIT> | <NUMBER>+<DIGIT> ]
 OCCUPATION:= {Size=1:90}
 The kind of activity that an individual does for a job, profession, or principal activity.
 ORDINANCE_PROCESS_FLAG:= {Size=2:3}
@@ -514,7 +514,7 @@ adopted = indicates adoptive parents.
 birth = indicates birth parents.
 foster = indicates child was included in a foster or guardian family.
 sealing = indicates child was sealed to parents other than birth parents.
-PERMANENT_RECORD_FILE_NUMBER:=  {Size=1:90}
+PERMANENT_RECORD_FILE_NUMBER:= {Size=1:90}
 <REGISTERED_RESOURCE_IDENTIFIER>:<RECORD_IDENTIFIER>
 The record number that uniquely identifies this record within a registered network resource. The
 number will be usable as a cross-reference pointer. The use of the colon (:) is reserved to indicate the
@@ -526,7 +526,7 @@ network is a future implementation.
 PHONE_NUMBER:= {Size=1:25}
 A phone number.
 PHONETIC_TYPE:= {Size=5:30}
-[<user defined> | hangul | kana]
+[ <user defined> | hangul | kana ]
 Indicates the method used in transforming the text to the phonetic variation.
 <user define> record method used to arrive at the phonetic variation of the name.
 hangul Phonetic method for sounding Korean glifs.
@@ -550,7 +550,7 @@ direction North or South from the equator in degrees and fraction of degrees car
 desired accuracy.
 PLACE_LIVING_ORDINANCE:= {Size=1:120}
 <PLACE_NAME>
-The locality of the place where a living LDS ordinance took place.  Typically, a living LDS baptism
+The locality of the place where a living LDS ordinance took place. Typically, a living LDS baptism
 place would be recorded in this field.
 PLACE_LONGITUDE:= {Size=5:8}
 The value specifying the longitudinal coordinate of the place name. The longitude coordinate is
@@ -565,7 +565,7 @@ commas. If the actual jurisdictional names of these places
 have been identified, they can be shown using a PLAC.FORM structure either in the HEADER or in
 the event structure. (See <PLACE_HIERARCHY>.)
 PLACE_PHONETIC_VARIATION:= {Size=1:120}
-The phonetic variation of the place name is written in the same form as  was the place name used in
+The phonetic variation of the place name is written in the same form as was the place name used in
 the superior <PLACE_NAME> primitive, but phonetically written using the method indicated by the
 subordinate <PHONETIC_TYPE> value.
 PLACE_ROMANIZED_VARIATION:= {Size=1:120}
@@ -601,11 +601,11 @@ RESPONSIBLE_AGENCY:= {Size=1:120}
 The organization, institution, corporation, person, or other entity that has responsibility for the
 associated context.
 RESTRICTION_NOTICE:= {Size=6:7}
-[confidential | locked | privacy ]
-The restriction notice is defined for Ancestral File usage.  Ancestral File download GEDCOM files
+[ confidential | locked | privacy ]
+The restriction notice is defined for Ancestral File usage. Ancestral File download GEDCOM files
 may contain this data.
 Where:
-confidential = This data was marked as confidential by the user.  In some systems data marked as
+confidential = This data was marked as confidential by the user. In some systems data marked as
 confidential will be treated differently.
 locked = Some records in Ancestral File have been satisfactorily proven by evidence, but
 because of source conflicts or incorrect traditions, there are repeated attempts to
@@ -625,7 +625,7 @@ ROLE_IN_EVENT:= {Size=1:15}
 [ CHIL | HUSB | WIFE | MOTH | FATH | SPOU | (<ROLE_DESCRIPTOR>) ]
 Indicates what role this person played in the event that is being cited in this context.
 ROMANIZED_TYPE:= {Size=5:30}
-[<user defined> | pinyin | romaji | wadegiles]
+[ <user defined> | pinyin | romaji | wadegiles ]
 Indicates the method used in transforming the text to a romanized variation.
 SCHOLASTIC_ACHIEVEMENT:= {Size=1:248}
 A description of a scholastic or educational achievement or pursuit.
@@ -640,16 +640,16 @@ SOURCE_CALL_NUMBER:= {Size=1:120}
 An identification or reference description used to file and retrieve items from the holdings of a
 repository.
 SOURCE_DESCRIPTION:= {Size=1:248}
-A free form text block used to describe the source from which information was obtained.  This text
+A free form text block used to describe the source from which information was obtained. This text
 block is used by those systems which cannot use a pointer to a source record. It must contain a
 descriptive title, who created the work, where and when it was created, and where the source data
 stored. The developer should encourage users to use an appropriate style for forming this free form
-bibliographic reference.  Developers are encouraged to support the SOURCE_RECORD method of
+bibliographic reference. Developers are encouraged to support the SOURCE_RECORD method of
 reporting bibliographic reference descriptions.
 SOURCE_DESCRIPTIVE_TITLE:= {Size=1:248}
 The title of the work, record, or item and, when appropriate, the title of the larger work or series of
 which it is a part.
-SOURCE_FILED_BY_ENTRY:= {Size= 1:60}
+SOURCE_FILED_BY_ENTRY:= {Size=1:60}
 This entry is to provide a short title used for sorting, filing, and retrieving source records.
 SOURCE_JURISDICTION_PLACE:= {Size=1:120}
 <PLACE_NAME>
@@ -671,7 +671,7 @@ created.
 SUBMITTER_NAME:= {Size=1:60}
 The name of the submitter formatted for display and address generation.
 SUBMITTER_REGISTERED_RFN:= {Size=1:30}
-A registered number of a submitter of Ancestral File data.  This number is used in subsequent
+A registered number of a submitter of Ancestral File data. This number is used in subsequent
 submissions or inquiries by the submitter for identification purposes.
 SUBMITTER_TEXT:= {Size=1:248}
 Comments or opinions from the submitter.
@@ -711,7 +711,7 @@ volume of a multi-volume work and the page number(s). For a periodical, it could
 issue, and page numbers. For a newspaper, it could include a column number and page number. For an
 unpublished source or microfilmed works, this could be a film or sheet number, page number, frame
 number, etc. A census record might have an enumerating district, page number, line number, dwelling
-number, and family number.  The data in this field should be in the form of a label and value pair, such
+number, and family number. The data in this field should be in the form of a label and value pair, such
 as Label1: value, Label2: value, with each pair being separated by a comma.
 XREF:= {Size=1:22}
 Either a pointer or an unique cross-reference identifier. If this element appears before the tag in a
