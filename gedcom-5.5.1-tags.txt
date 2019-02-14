@@ -4,13 +4,13 @@ ADDR {ADDRESS}:=
 The contemporary place, usually required for postal purposes, of an individual, a submitter of
 information, a repository, a business, a school, or a company.
 ADR1 {ADDRESS1}:=
-The first line of an address. 
+The first line of an address.
 ADR2 {ADDRESS2}:=
 The second line of an address.
 ADOP {ADOPTION}:=
 Pertaining to creation of a legally approved child-parent relationship that does not exist biologically.
 AFN {AFN}:=
-A unique permanent record file number of an individual record stored in Ancestral File. 
+A unique permanent record file number of an individual record stored in Ancestral File.
 AGE {AGE}:=
 The age of the individual at the time an event occurred, or the age listed in the document.
 AGNC {AGENCY}:=
@@ -27,7 +27,6 @@ ASSO {ASSOCIATES}:=
 An indicator to link friends, neighbors, relatives, or associates of an individual.
 AUTH {AUTHOR}:=
 The name of the individual who created or compiled information.
-                                      
 BAPL {BAPTISM-LDS}:=
 The event of baptism performed at age eight or later by priesthood authority of the LDS Church. (See
 also BAPM, next)
@@ -47,8 +46,8 @@ BURI {BURIAL}:=
 The event of the proper disposing of the mortal remains of a deceased person.
 CALN {CALL_NUMBER}:=
 The number used by a repository to identify the specific items in its collections.
-CAST {CASTE}:=                               
-  The name of an individual's rank or status in society which is sometimes based on racial or religious
+CAST {CASTE}:=
+The name of an individual's rank or status in society which is sometimes based on racial or religious
 differences, or differences in wealth, inherited  rank, profession, occupation, etc.
 CAUS {CAUSE}:=
 A description of the cause of the associated event or fact, such as the cause of death.
@@ -263,7 +262,6 @@ A permanent number assigned to a record that uniquely identifies it within a kno
 RIN {REC_ID_NUMBER}:=
 A number assigned to a record by an originating automated system that can be used by a receiving
 system to report results pertaining to that record.
- 
 ROLE {ROLE}:=
 A name given to a role played by an individual in connection with an event.
 ROMN {ROMANIZED}:=
@@ -296,7 +294,7 @@ TEMP {TEMPLE}:=
 The name or code that represents the name of an LDS Church Temple.
 TEXT {TEXT}:=
 The exact wording found in an original source document.
-TIME {TIME}:= 
+TIME {TIME}:=
 A time value in a 24-hour clock format, including hours, minutes, and optional seconds, separated by a
 colon (:). Fractions of seconds are shown in decimal notation.
 TITL {TITLE}:=
@@ -312,7 +310,7 @@ displayed any time the associated data is displayed.
 VERS {VERSION}:=
 Indicates which version of a product, item, or publication is being used or referenced.
 WIFE {WIFE}:=
-   An individual in the role as a mother and/or married woman.
+An individual in the role as a mother and/or married woman.
 WILL {WILL}:=
 A legal document treated as an event, by which a person disposes of his or her estate, to take effect
 after death. The event date is the date the will was signed while the person was alive. (See also

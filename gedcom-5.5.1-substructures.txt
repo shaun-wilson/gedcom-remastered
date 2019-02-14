@@ -145,7 +145,7 @@ n [ CENS | PROB | WILL] {1:1}
 n [ GRAD | RETI ]  {1:1}
 +1 <<INDIVIDUAL_EVENT_DETAIL>>  {0:1}*  p.34
 |
-n EVEN    {1:1} 
+n EVEN    {1:1}
 +1 <<INDIVIDUAL_EVENT_DETAIL>>  {0:1}*  p.34
 ]
 LDS_INDIVIDUAL_ORDINANCE:=

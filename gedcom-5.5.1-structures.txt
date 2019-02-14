@@ -28,7 +28,7 @@ n HEAD {1:1}
 +2 [CONC|CONT] <GEDCOM_CONTENT_DESCRIPTION> {0:M}
 * NOTE:
 Submissions to the Family History Department for Ancestral File submission or for clearing temple ordinances  must use a
-DESTination of ANSTFILE or TempleReady, respectively.  
+DESTination of ANSTFILE or TempleReady, respectively.
 The header structure provides information about the entire transmission. The SOURce system name
 identifies which system sent the data. The DESTination system name identifies the intended receiving
 system.
@@ -37,7 +37,7 @@ maturity. This requires the reading program to make sure it can read the GEDC.VE
 GEDC.FORM values to insure proper readability. The CHAR tag is required. All character codes
 greater than 0x7F must be converted to ANSEL. (See Chapter 3, starting on page 77.)
 RECORD:=
-[ 
+[
 n <<FAM_RECORD>> {1:1} p.24
 |
 n <<INDIVIDUAL_RECORD>> {1:1} p.25
@@ -49,7 +49,7 @@ n <<NOTE_RECORD>> {1:1} p.27
 n <<REPOSITORY_RECORD>> {1:1} p.27
 |
 n <<SOURCE_RECORD>> {1:1} p.27
-|                                    
+|
 n <<SUBMITTER_RECORD>> {1:1} p.28
 ]
 FAM_RECORD:=

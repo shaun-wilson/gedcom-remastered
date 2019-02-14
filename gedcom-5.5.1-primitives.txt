@@ -10,7 +10,7 @@ A FAX telephone number appropriate for sending data facsimiles.
 ADDRESS_LINE:= {Size=1:60}
 Typically used to define a mailing address of an individual when used subordinate to a RESIdent tag.
 When it is used subordinate to an event tag it is the address of the place where the event took place.
-The address lines usually contain the addressee’s name and other street and city information so that it 
+The address lines usually contain the addressee’s name and other street and city information so that it
 forms an address that meets mailing requirements.
 ADDRESS_LINE1:= {Size=1:60}
 The first line of the address used for indexing.  This is the value of the line corresponding to the
@@ -38,8 +38,8 @@ BOTH = Both HUSBand and WIFE adopted this person.
 AGE_AT_EVENT:= {Size=1:12}
 [ < | > | <NULL>]
 [ YYy MMm DDDd | YYy | MMm | DDDd |
-    YYy MMm | YYy DDDd | MMm DDDd |
-  CHILD | INFANT | STILLBORN ]
+ YYy MMm | YYy DDDd | MMm DDDd |
+ CHILD | INFANT | STILLBORN ]
 ]
 Where:
 > = greater than indicated age
@@ -66,12 +66,12 @@ ATTRIBUTE_DESCRIPTOR:= {Size=1:90}
 Text describing a particular characteristic or attribute assigned to an individual. This attribute value is
 assigned to the FACT tag.  The classification of this specific attribute or fact is specified by the value
 of the subordinate TYPE tag selected from the EVENT_DETAIL structure.  For example if you were
-classifying the skills a person had obtained; 
+classifying the skills a person had obtained;
 1 FACT Woodworking
 2 TYPE Skills
 ATTRIBUTE_TYPE:= {Size=1:4}
 [ CAST | EDUC | NATI | OCCU | PROP | RELI | RESI | TITL | FACT ]
-An attribute which may have caused name, addresses, phone numbers, family listings to be recorded. 
+An attribute which may have caused name, addresses, phone numbers, family listings to be recorded.
 Its application is in helping to classify sources used for information.
 AUTOMATED_RECORD_ID:= {Size=1:12}
 A unique record identification number assigned to the record by the source system.  This number is
@@ -99,7 +99,7 @@ CHANGE_DATE:= {Size=10:11}
 The date that this data was changed.
 CHARACTER_SET:= {Size=1:8}
 [ ANSEL |UTF-8 | UNICODE | ASCII ]
-A code value that represents the character set to be used to interpret this data. Currently, the 
+A code value that represents the character set to be used to interpret this data. Currently, the
 preferred character set is ANSEL, which includes ASCII as a subset. UNICODE is not widely
 supported by most operating systems; therefore, GEDCOM produced using the UNICODE character
 set will be limited in its interchangeability for a while but should eventually provide the international
@@ -117,9 +117,8 @@ proven = There has been a claim by some that this child does not belongs to this
 linkage has been proven.
 COPYRIGHT_GEDCOM_FILE:= {Size=1:90}
 A copyright statement needed to protect the copyrights of the submitter of this GEDCOM file.
-                                      
 COPYRIGHT_SOURCE_DATA:= {Size=1:90}
-A copyright statement required by the owner of data from which this information was down- loaded. 
+A copyright statement required by the owner of data from which this information was down- loaded.
 For example, when a GEDCOM down-load is requested from the Ancestral File, this would be the
 copyright statement to indicate that the data came from a copyrighted source.
 COUNT_OF_CHILDREN:= {Size=1:3}
@@ -127,7 +126,6 @@ The known number of children of this individual from all marriages or, if subord
 record, the reported number of children known to belong to this family, regardless of whether the
 associated children are represented in the corresponding structure. This is not necessarily the count of
 children listed in a family structure.
-                                      
 COUNT_OF_MARRIAGES:= {Size=1:3}
 The number of different families that this person was known to have been a member of as a spouse or
 parent, regardless of whether the associated families are represented in the GEDCOM file.
@@ -146,23 +144,23 @@ CAL = Calculated mathematically, for example, from an event date and age.
 EST = Estimated based on an algorithm using some other event date.
 DATE_CALENDAR:= {Size=4:35}
 [ <DATE_GREG> | <DATE_JULN> | <DATE_HEBR> | <DATE_FREN> |
-  <DATE_FUTURE> ]
+ <DATE_FUTURE> ]
 The selection is based on the <DATE_CALENDAR_ESCAPE> that precedes the
 <DATE_CALENDAR> value immediately to the left.  If <DATE_CALENDAR_ESCAPE> doesn't
 appear at this point, then @#DGREGORIAN@ is assumed.  No future calendar types will use words
-(e.g., month names) from this list: FROM, TO, BEF, AFT, BET, AND, ABT, EST, CAL, or INT. 
+(e.g., month names) from this list: FROM, TO, BEF, AFT, BET, AND, ABT, EST, CAL, or INT.
 When only a day and month appears as a DATE value it is considered a date phrase and not a valid
 date form.
 Date Escape Syntax Selected
-    @#DGREGORIAN@ <DATE_GREG>
-    @#DJULIAN@ <DATE_JULN>
-    @#DHEBREW@ <DATE_HEBR>
-    @#DFRENCH R@ <DATE_FREN>
-    @#DROMAN@ for future definition
-    @#DUNKNOWN@  calendar not known
-DATE_CALENDAR_ESCAPE:= {Size=4:15}   
+@#DGREGORIAN@ <DATE_GREG>
+@#DJULIAN@ <DATE_JULN>
+@#DHEBREW@ <DATE_HEBR>
+@#DFRENCH R@ <DATE_FREN>
+@#DROMAN@ for future definition
+@#DUNKNOWN@  calendar not known
+DATE_CALENDAR_ESCAPE:= {Size=4:15}
 [ @#DHEBREW@ | @#DROMAN@ | @#DFRENCH R@ | @#DGREGORIAN@ |
-  @#DJULIAN@ | @#DUNKNOWN@ ]
+ @#DJULIAN@ | @#DUNKNOWN@ ]
 The date escape determines the date interpretation by signifying which <DATE_CALENDAR> to use.
 The default calendar is the Gregorian calendar.
 DATE_EXACT:= {Size=10:11}
@@ -173,11 +171,11 @@ DATE_FREN:= {Size=4:35}
 See <MONTH_FREN> page 53
 DATE_GREG:= {Size=4:35}
 [ <YEAR_GREG>[B.C.] | <MONTH> <YEAR_GREG> |
-  <DAY> <MONTH> <YEAR_GREG> ]
+ <DAY> <MONTH> <YEAR_GREG> ]
 See <YEAR_GREG> page 65.
 DATE_HEBR:= {Size=4:35}
 [ <YEAR>[B.C.] | <MONTH_HEBR> <YEAR> |
-  <DAY> <MONTH_HEBR> <YEAR> ]
+ <DAY> <MONTH_HEBR> <YEAR> ]
 See <MONTH_HEBR> page 53
 DATE_JULN:= {Size=4:35}
 [ <YEAR>[B.C.] | <MONTH> <YEAR> | <DAY> <MONTH> <YEAR> ]
@@ -239,19 +237,19 @@ INT <DATE> (<DATE_PHRASE>) |
 (<DATE_PHRASE>)
 ]
 The DATE_VALUE represents the date of an activity, attribute, or event where:
-INT = Interpreted from knowledge about the associated date phrase included in parentheses. 
+INT = Interpreted from knowledge about the associated date phrase included in parentheses.
 An acceptable alternative to the date phrase choice is to use one of the other choices such as
 <DATE_APPROXIMATED> choice as the DATE line value and then include the date phrase value
 as a NOTE value subordinate to the DATE line tag.
 The date value can take on the date form of just a date, an approximated date, between a date and
 another date, and from one date to another date.  The preferred form of showing date imprecision, is
 to show, for example, MAY 1890 rather than ABT 12 MAY 1890.  This is because limits have not
-been assigned to the precision of the prefixes such as ABT or EST.  
+been assigned to the precision of the prefixes such as ABT or EST.
 DAY:= {Size=1:2}
 dd
 Day of the month, where dd is a numeric digit whose value is within the valid range of the days for the
 associated calendar month.
-DESCRIPTIVE_TITLE:= {Size=1:248}  
+DESCRIPTIVE_TITLE:= {Size=1:248}
 The title of a work, record, item, or object.
 DIGIT:= {Size=1:1}
 A single digit (0-9).
@@ -269,7 +267,7 @@ EVENT_DESCRIPTOR:= {Size=1:90}
 Text describing a particular event pertaining to the individual or family. This event value is usually
 assigned to the EVEN tag.  The classification as to the difference between this specific event and other
 occurrences of the EVENt tag is indicated by the use of a subordinate TYPE tag selected from the
-EVENT_DETAIL structure.  For example; 
+EVENT_DETAIL structure.  For example;
 1 EVEN Appointed Zoning Committee Chairperson
 2 TYPE Civic Appointments
 2 DATE FROM JAN 1952 TO JAN 1956
@@ -287,7 +285,7 @@ This groups the fact into a generic skills attribute, and in particular this ent
 individual possessed the skill of woodworking. Using the subordinate TYPE tag classification method
 with any of the other defined event tags provides a further classification of the parent tag but does not
 change the basic meaning of the parent tag. For example, a MARR tag could be subordinated with a
-TYPE tag with an EVENT_DESCRIPTOR value of `Common Law.' 
+TYPE tag with an EVENT_DESCRIPTOR value of `Common Law.'
 1 MARR
 2 TYPE Common Law
 This classifies the entry as a common law marriage but the event is still a marriage event. Other
@@ -363,7 +361,7 @@ The language in which a person prefers to communicate.  Multiple language prefer
 using multiple occurrences in order of priority.
 LDS_BAPTISM_DATE_STATUS:= {Size=5:10}
 [ CHILD | COMPLETED | EXCLUDED | PRE-1970 |
-  STILLBORN | SUBMITTED | UNCLEARED ]
+ STILLBORN | SUBMITTED | UNCLEARED ]
 A code indicating the status of an LDS baptism and confirmation date where:
 CHILD = Died before becoming eight years old, baptism not required.
 COMPLETED = Completed but the date is not known.
@@ -376,7 +374,7 @@ SUBMITTED = Ordinance was previously submitted.
 UNCLEARED = Data for clearing ordinance request was insufficient.
 LDS_CHILD_SEALING_DATE_STATUS:= {Size=5:10}
 [ BIC | COMPLETED | EXCLUDED | DNS | PRE-1970 |
-  STILLBORN | SUBMITTED | UNCLEARED ]
+ STILLBORN | SUBMITTED | UNCLEARED ]
 BIC = Born in the covenant receiving blessing of child to parent sealing.
 EXCLUDED = Patron excluded this ordinance from being cleared in this submission.
 PRE-1970 = (See pre-1970 under LDS_BAPTISM_DATE_STATUS on page 51.)
@@ -385,7 +383,7 @@ SUBMITTED = Ordinance was previously submitted.
 UNCLEARED = Data for clearing ordinance request was insufficient.
 LDS_ENDOWMENT_DATE_STATUS:= {Size=5:10}
 [ CHILD | COMPLETED | EXCLUDED | PRE-1970 |
-  STILLBORN | SUBMITTED | UNCLEARED ]
+ STILLBORN | SUBMITTED | UNCLEARED ]
 A code indicating the status of an LDS endowment ordinance where:
 CHILD = Died before eight years old.
 COMPLETED = Completed but the date is not known.
@@ -397,7 +395,7 @@ SUBMITTED = Ordinance was previously submitted.
 UNCLEARED = Data for clearing ordinance request was insufficient.
 LDS_SPOUSE_SEALING_DATE_STATUS:= {Size=3:10}
 [ CANCELED | COMPLETED | DNS | EXCLUDED |
-  DNS/CAN | PRE-1970 | SUBMITTED | UNCLEARED ]
+ DNS/CAN | PRE-1970 | SUBMITTED | UNCLEARED ]
 CANCELED = Canceled and considered invalid.
 COMPLETED = Completed but the date is not known.
 EXCLUDED = Patron excluded this ordinance from being cleared in this submission.
@@ -408,7 +406,7 @@ SUBMITTED = Ordinance was previously submitted.
 UNCLEARED = Data for clearing ordinance request was insufficient.
 MONTH:= {Size=3}
 [ JAN | FEB | MAR | APR | MAY | JUN |
-  JUL | AUG | SEP | OCT | NOV | DEC ]
+ JUL | AUG | SEP | OCT | NOV | DEC ]
 Where:
 JAN = January
 FEB = February
@@ -424,7 +422,7 @@ NOV = November
 DEC = December
 MONTH_FREN:= {Size=4}
 [ VEND | BRUM | FRIM | NIVO | PLUV | VENT | GERM |
-  FLOR | PRAI | MESS | THER | FRUC | COMP ]
+ FLOR | PRAI | MESS | THER | FRUC | COMP ]
 Where:
 VEND = VENDEMIAIRE
 BRUM = BRUMAIRE
@@ -441,7 +439,7 @@ FRUC = FRUCTIDOR
 COMP = JOUR_COMPLEMENTAIRS
 MONTH_HEBR:= {Size=3}
 [ TSH | CSH | KSL | TVT | SHV | ADR | ADS |
-  NSN | IYR | SVN | TMZ | AAV | ELL ]
+ NSN | IYR | SVN | TMZ | AAV | ELL ]
 Where:
 TSH = Tishri
 CSH = Cheshvan
@@ -457,7 +455,7 @@ TMZ = Tammuz
 AAV = Av
 ELL = Elul
 MULTIMEDIA_FILE_REFERENCE:= {Size=1:30}
-A complete local or remote file reference to the auxiliary data to be linked to the GEDCOM context. 
+A complete local or remote file reference to the auxiliary data to be linked to the GEDCOM context.
 Remote reference would include a network address where the multimedia data may be obtained.
 MULTIMEDIA_FORMAT:= {Size=3:4}
 [ bmp | gif | jpg | ole | pcx | tif | wav ]
@@ -490,7 +488,7 @@ giving it to a recorder. Early versions of Personal Ancestral File  ®  and othe
 trailing slash when the surname was the last element of the name. If part of name is illegible, that part
 is indicated by an ellipsis (...). Capitalize the name of a person or place in the conventional
 manner— capitalize the first letter of each part and lowercase the other letters, unless conventional
-usage is otherwise. For example: McMurray. 
+usage is otherwise. For example: McMurray.
 Examples:
 William Lee (given name only or surname not known)
 /Parry/ (surname only)
@@ -538,11 +536,11 @@ The romanized variation of the name is written in the same form prescribed for t
 superior <NAME_PERSONAL> context. The method used to romanize the name is indicated by the
 line_value of the subordinate <ROMANIZED_TYPE>, for example if romaji was used to provide a
 reading of a name written in kanji, then the ROMANIZED_TYPE subordinate to the ROMN tag
-would indicate romaji. See page 61. 
+would indicate romaji. See page 61.
 NAME_TEXT:= {Size=1:120}
-<TEXT> excluding commas, numbers, special characters not considered diacritics. 
+<TEXT> excluding commas, numbers, special characters not considered diacritics.
 NAME_TYPE:= {Size=5:30}
- [ aka | birth | immigrant | maiden | married | <user defined>]
+[ aka | birth | immigrant | maiden | married | <user defined>]
 Indicates the name type, for example the name issued or assumed as an immigrant.
 aka = also known as, alias, etc.
 birth = name given on birth certificate.
@@ -575,7 +573,7 @@ OCCUPATION:= {Size=1:90}
 The kind of activity that an individual does for a job, profession, or principal activity.
 ORDINANCE_PROCESS_FLAG:= {Size=2:3}
 [ yes | no ]
-A flag that indicates whether submission should be processed for clearing temple ordinances. 
+A flag that indicates whether submission should be processed for clearing temple ordinances.
 PEDIGREE_LINKAGE_TYPE:= {Size=5:7}
 [ adopted | birth | foster | sealing ]
 A code used to indicate the child to family relationship for pedigree navigation purposes.
@@ -583,8 +581,8 @@ Where:
 adopted = indicates adoptive parents.
 birth = indicates birth parents.
 foster = indicates child was included in a foster or guardian family.
-sealing = indicates child was sealed to parents other than birth parents. 
-PERMANENT_RECORD_FILE_NUMBER:=  {Size=1:90} 
+sealing = indicates child was sealed to parents other than birth parents.
+PERMANENT_RECORD_FILE_NUMBER:=  {Size=1:90}
 <REGISTERED_RESOURCE_IDENTIFIER>:<RECORD_IDENTIFIER>
 The record number that uniquely identifies this record within a registered network resource. The
 number will be usable as a cross-reference pointer. The use of the colon (:) is reserved to indicate the
@@ -619,7 +617,7 @@ structure stated in the HEADER. This usage is not common and, therefore, not enc
 only be used when a system has over-structured its place-names.
 PLACE_LATITUDE:= {Size=5:8}
 The value specifying the latitudinal coordinate of the place name. The latitude coordinate is the
-direction North or South from the equator in degrees and fraction of degrees carried out to give the 
+direction North or South from the equator in degrees and fraction of degrees carried out to give the
 desired accuracy. For example:  18 degrees, 9 minutes, and 3.4 seconds North would be formatted as
 N18.150944.  Minutes and seconds are converted by dividing the minutes value by 60 and the seconds
 value by 3600 and adding the results together. This sum becomes the fractional part of the degree’s
@@ -629,14 +627,14 @@ PLACE_LIVING_ORDINANCE:= {Size=1:120}
 The locality of the place where a living LDS ordinance took place.  Typically, a living LDS baptism
 place would be recorded in this field.
 PLACE_LONGITUDE:= {Size=5:8}
-The value specifying the longitudinal coordinate of the place name. The longitude coordinate is 
+The value specifying the longitudinal coordinate of the place name. The longitude coordinate is
 Degrees and fraction of degrees east or west of the zero or base meridian coordinate. For example:
-168 degrees, 9 minutes, and 3.4 seconds East would be formatted as E168.150944.  
+168 degrees, 9 minutes, and 3.4 seconds East would be formatted as E168.150944.
 PLACE_NAME:= {Size=1:120}
 [
- <PLACE_TEXT> |                                
- <PLACE_TEXT>, <PLACE_NAME>                         
-]                                    
+ <PLACE_TEXT> |
+ <PLACE_TEXT>, <PLACE_NAME>
+]
 The jurisdictional name of the place where the event took place. Jurisdictions are separated by
 commas, for example, "Cove, Cache, Utah, USA." If the actual jurisdictional names of these places
 have been identified, they can be shown using a PLAC.FORM structure either in the HEADER or in
@@ -708,7 +706,7 @@ Ancestral File may have individuals marked with ‘privacy’ if they are assume
 that is they were born within the last 110 years and there isn’t a death date.  In certain
 cases family records may also be marked with the RESN tag of privacy if either
 individual acting in the role of HUSB or WIFE is assumed living.
-ROLE_DESCRIPTOR:= {Size=1:25}   
+ROLE_DESCRIPTOR:= {Size=1:25}
 A word or phrase that identifies a person's role in an event being described. This should be the same
 word or phrase, and in the same language, that the recorder used to define the role in the actual
 record.
@@ -719,13 +717,13 @@ you cite a child's birth record as the source of the mother's name, the value fo
 you describe the groom of a marriage, the role is "HUSB." If the role is something different than one
 of the six relationship role tags listed above then enclose the role name within matching parentheses.
 ROMANIZED_TYPE:= {Size=5:30}
- [<user defined> | pinyin | romaji | wadegiles]
+[<user defined> | pinyin | romaji | wadegiles]
 Indicates the method used in transforming the text to a romanized variation.
 SCHOLASTIC_ACHIEVEMENT:= {Size=1:248}
 A description of a scholastic or educational achievement or pursuit.
 SEX_VALUE:= {Size=1:7}
 A code that indicates the sex of the individual:
-M = Male                               
+M = Male
 F = Female
 U = Undetermined from available records and quite sure that it can’t be.
 SOCIAL_SECURITY_NUMBER:= {Size=9:11}
@@ -739,8 +737,8 @@ block is used by those systems which cannot use a pointer to a source record. It
 descriptive title, who created the work, where and when it was created, and where the source data
 stored. The developer should encourage users to use an appropriate style for forming this free form
 bibliographic reference.  Developers are encouraged to support the SOURCE_RECORD method of
-reporting bibliographic reference descriptions. 
-SOURCE_DESCRIPTIVE_TITLE:= {Size=1:248}  
+reporting bibliographic reference descriptions.
+SOURCE_DESCRIPTIVE_TITLE:= {Size=1:248}
 The title of the work, record, or item and, when appropriate, the title of the larger work or series of
 which it is a part.
 For a published work, a book for example, might have a title plus the title of the series of which the
@@ -750,7 +748,7 @@ For An unpublished work, such as:
 ! A letter might include the date, the sender, and the receiver.
 ! A transaction between a buyer and seller might have their names and the transaction date.
 ! A family Bible containing genealogical information might have past and present owners and a
-physical description of the book.   
+physical description of the book.
 ! A personal interview would cite the informant and interviewer.
 SOURCE_FILED_BY_ENTRY:= {Size= 1:60}
 This entry is to provide a short title used for sorting, filing, and retrieving source records.
@@ -854,4 +852,4 @@ YEAR_GREG:= {Size=3:7}
 The slash "/" <DIGIT><DIGIT> a year modifier which shows the possible date alternatives for pre-
 1752 date brought about by a changing the beginning of the year from MAR to JAN in the English
 calendar change of 1752, for example, 15 APR 1699/00. A (B.C.) appended to the <YEAR> indicates
-a date before the birth of Christ. 
+a date before the birth of Christ.
