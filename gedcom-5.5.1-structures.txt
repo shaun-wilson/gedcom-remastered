@@ -26,9 +26,7 @@ n HEAD {1:1}
 +2 FORM <PLACE_HIERARCHY> {1:1}
 +1 NOTE <GEDCOM_CONTENT_DESCRIPTION> {0:1}
 +2 [ CONC | CONT ] <GEDCOM_CONTENT_DESCRIPTION> {0:M}
-The header structure provides information about the entire transmission. The SOURce system name
-identifies which system sent the data. The DESTination system name identifies the intended receiving
-system.
+The header structure provides information about the entire transmission. The SOURce system name identifies which system sent the data. The DESTination system name identifies the intended receiving system.
 RECORD:=
 [
 n <<FAM_RECORD>> {1:1}
@@ -62,11 +60,7 @@ n @<XREF:FAM>@ FAM {1:1}
 +1 <<NOTE_STRUCTURE>> {0:M}
 +1 <<SOURCE_CITATION>> {0:M}
 +1 <<MULTIMEDIA_LINK>> {0:M}
-The FAMily record is used to record marriages, common law marriages, and family unions caused by
-two people becoming the parents of a child. There can be no more than one HUSB/father and one
-WIFE/mother listed in each FAM_RECORD. If, for example, a man participated in more than one
-family union, then he would appear in more than one FAM_RECORD. The family record structure
-assumes that the HUSB/father is male and WIFE/mother is female.
+The FAMily record is used to record marriages, common law marriages, and family unions caused by two people becoming the parents of a child. There can be no more than one HUSB/father and one WIFE/mother listed in each FAM_RECORD. If, for example, a man participated in more than one family union, then he would appear in more than one FAM_RECORD. The family record structure assumes that the HUSB/father is male and WIFE/mother is female.
 The preferred order of the CHILdren pointers within a FAMily structure is chronological by birth.
 INDIVIDUAL_RECORD:=
 n @XREF:INDI@ INDI {1:1}
@@ -92,23 +86,10 @@ n @XREF:INDI@ INDI {1:1}
 +1 <<NOTE_STRUCTURE>> {0:M}
 +1 <<SOURCE_CITATION>> {0:M}
 +1 <<MULTIMEDIA_LINK>> {0:M}
-The individual record is a compilation of facts, known or discovered, about an individual. Sometimes
-these facts are from different sources. This form allows documentation of the source where each of
-the facts were discovered.
-The normal lineage links are shown through the use of pointers from the individual to a family
-through either the FAMC tag or the FAMS tag. The FAMC tag provides a pointer to a family where
-this person is a child. The FAMS tag provides a pointer to a family where this person is a spouse or
-parent. The <<CHILD_TO_FAMILY_LINK>> structure contains a FAMC pointer
-which is required to show any child to parent linkage for pedigree navigation. The
-<<CHILD_TO_FAMILY_LINK>> structure also indicates whether the pedigree link represents a
-birth lineage, an adoption lineage, or a sealing lineage.
-Linkage between a child and the family they belonged to at the time of an event can also be shown
-by a FAMC pointer subordinate to the appropriate event. For example, a FAMC pointer subordinate
-to an adoption event indicates a relationship to family by adoption. Biological parents can be shown
-by a FAMC pointer subordinate to the birth event(optional).
-Other associations or relationships are represented by the ASSOciation tag. The person's relation
-or association is the person being pointed to. The association or relationship is stated by the value
-on the subordinate RELA line.
+The individual record is a compilation of facts, known or discovered, about an individual. Sometimes these facts are from different sources. This form allows documentation of the source where each of the facts were discovered.
+The normal lineage links are shown through the use of pointers from the individual to a family through either the FAMC tag or the FAMS tag. The FAMC tag provides a pointer to a family where this person is a child. The FAMS tag provides a pointer to a family where this person is a spouse or parent. The <<CHILD_TO_FAMILY_LINK>> structure contains a FAMC pointer which is required to show any child to parent linkage for pedigree navigation. The <<CHILD_TO_FAMILY_LINK>> structure also indicates whether the pedigree link represents a birth lineage, an adoption lineage, or a sealing lineage.
+Linkage between a child and the family they belonged to at the time of an event can also be shown by a FAMC pointer subordinate to the appropriate event. For example, a FAMC pointer subordinate to an adoption event indicates a relationship to family by adoption. Biological parents can be shown by a FAMC pointer subordinate to the birth event(optional).
+Other associations or relationships are represented by the ASSOciation tag. The person's relation or association is the person being pointed to. The association or relationship is stated by the value on the subordinate RELA line.
 MULTIMEDIA_RECORD:=
 n @XREF:OBJE@ OBJE {1:1}
 +1 FILE <MULTIMEDIA_FILE_REFN> {1:M}
@@ -162,8 +143,7 @@ n @<XREF:SOUR>@ SOUR {1:1}
 +1 <<CHANGE_DATE>> {0:1}
 +1 <<NOTE_STRUCTURE>> {0:M}
 +1 <<MULTIMEDIA_LINK>> {0:M}
-Source records are used to provide a bibliographic description of the source cited. (See the
-<<SOURCE_CITATION>> structure, which contains the pointer to this source record.)
+Source records are used to provide a bibliographic description of the source cited. (See the <<SOURCE_CITATION>> structure, which contains the pointer to this source record).
 SUBMISSION_RECORD:=
 n @XREF:SUBN@ SUBN {1:1}
 +1 SUBM @XREF:SUBM@ {0:1}
@@ -175,12 +155,7 @@ n @XREF:SUBN@ SUBN {1:1}
 +1 RIN <AUTOMATED_RECORD_ID> {0:1}
 +1 <<NOTE_STRUCTURE>> {0:M}
 +1 <<CHANGE_DATE>> {0:1}
-The sending system uses a submission record to send instructions and information to the receiving
-system. TempleReady processes submission records to determine which temple the cleared records
-should be directed to. The submission record is also used for communication between Ancestral File
-download requests and TempleReady. Each GEDCOM transmission file should have only one
-submission record. Multiple submissions are handled by creating separate GEDCOM transmission
-files.
+The sending system uses a submission record to send instructions and information to the receiving system. TempleReady processes submission records to determine which temple the cleared records should be directed to. The submission record is also used for communication between Ancestral File download requests and TempleReady. Each GEDCOM transmission file should have only one submission record. Multiple submissions are handled by creating separate GEDCOM transmission files.
 SUBMITTER_RECORD:=
 n @<XREF:SUBM>@ SUBM {1:1}
 +1 NAME <SUBMITTER_NAME> {1:1}
@@ -191,7 +166,4 @@ n @<XREF:SUBM>@ SUBM {1:1}
 +1 RIN <AUTOMATED_RECORD_ID> {0:1}
 +1 <<NOTE_STRUCTURE>> {0:M}
 +1 <<CHANGE_DATE>> {0:1}
-The submitter record identifies an individual or organization that contributed information contained
-in the GEDCOM transmission. All records in the transmission are assumed to be submitted by the
-SUBMITTER referenced in the HEADer, unless a SUBMitter reference inside a specific record
-points at a different SUBMITTER record.
+The submitter record identifies an individual or organization that contributed information contained in the GEDCOM transmission. All records in the transmission are assumed to be submitted by the SUBMITTER referenced in the HEADer, unless a SUBMitter reference inside a specific record points at a different SUBMITTER record.
