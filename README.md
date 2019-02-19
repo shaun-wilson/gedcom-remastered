@@ -1,4 +1,4 @@
-# gedcom-remastered
+# GEDCOM Remastered
 A project to "remaster" the PDF GEDCOM Standard's, and transform them into human-readable and computer-parsable text based formats.
 
 The original documents are rife with problems, including logical errors, inconsistent and incorrect syntax, and missing definitions. The content of the source documents (ie PDF's) has been manually copied into text files. All of the above problems have then been corrected, resulting in human-readable and computer-parsable text files.
