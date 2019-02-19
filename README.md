@@ -6,17 +6,19 @@ The following "structural" changes have been made to this standard. Note that th
 
 ### Primitives
 #### AGE_AT_EVENT (modified)
-The original standard had 2 "lists" of optional value defintions, which is not allowed by remaster syntax. To resolve this, the first list which contained the greater-than and less-than symbols was moved to a new primitive called AGE_INEQUALITY.
+The original standard had 2 "lists" of optional value definitions, which is not allowed by remaster syntax. To resolve this, the first list which contained the greater-than and less-than symbols was promoted to a new primitive called AGE_INEQUALITY.
 
-Additionally, what should have been primitives representing the digits for years, months, and days, were placeholder strings YY, MM, and DDD. These strings were spun off to their own primitives: YEARS, MONTHS, MONTHS:IN_YEAR, DAYS, DAYS:IN_YEAR, and DAYS:IN_MONTH.
+Additionally, what should have been primitives representing the digits for years, months, and days, were place-holder strings YY, MM, and DDD. These strings were spun off to their own primitives: YEARS, MONTHS, MONTHS:IN_YEAR, DAYS, DAYS:IN_YEAR, and DAYS:IN_MONTH.
+#### AGE_INEQUALITY (added)
+Refer to the notes for AGE_AT_EVENT.
 #### DATE (modified)
 This primitive was changed to use the new DATE_CALENDAR_ESCAPED primitive. Refer to the notes for DATE_CALENDAR and DATE_CALENDAR_ESCAPE.
 #### DATE_CALENDAR and DATE_CALENDAR_ESCAPE (removed)
-The original standard was structured in such a way that there was no syntax connecting between the calender date value and the calendar escape code. Instead, it was inferred by the standards. In fact, the syntax as written would allow any escape code to be paird with any calendar date value, even if it is not logical to do so.
+The original standard was structured in such a way that there was no syntax linking a calendar date value and it's calendar escape code. Instead, it was inferred by the standards. In fact, the syntax as written would allow any escape code to be paired with any calendar date value, even if it is not logical to do so.
 
-To correct this situation, these primtives were replaced by a new primtive called DATE_CALENDAR_ESCAPED. This primitive only allows the correct escape code to be paired with the correct calendar date value. It also allows for a Gregorian calendar date value to be used without a escape code, as the standards allow.
+To correct this situation, these primitives were replaced by a new primitive called DATE_CALENDAR_ESCAPED. This primitive only allows the correct escape code to be paired with the proper calendar date value. It also allows for a Gregorian calendar date value to be used without an escape code, as the standards allow.
 #### DATE_CALENDAR_ESCAPED (added)
-This new primitive was added. Refer to the notes for DATE_CALENDAR and DATE_CALENDAR_ESCAPE for why it was created.
+Refer to the notes for DATE_CALENDAR and DATE_CALENDAR_ESCAPE.
 #### DATE_EXACT (modified)
 Refer to the notes for YEAR_GREG.
 #### DATE_GREG (modified)
@@ -28,7 +30,7 @@ Refer to the notes for AGE_AT_EVENT.
 #### DAYS:IN_YEAR (added)
 Refer to the notes for AGE_AT_EVENT.
 #### GEDCOM_FORM (modified)
-Upgraded to add the USER_DEFINED primitive, which was required for alternative values to be entered and validated. Refer to the notes for USER_DEFINED.
+Refer to the notes for USER_DEFINED.
 #### FRACSEC (added)
 Refer to the notes for TIME_VALUE.
 #### HOUR (added)
@@ -58,11 +60,11 @@ Refer to the notes for NAME_TEXT. This primitive is intended to a sub-class of t
 #### TEXT:PLACE (added)
 Refer to the notes for PLACE_TEXT. This primitive is intended to a sub-class of the TEXT primitive.
 #### TIME_VALUE (modified)
-The option string for this primitive consisted of placeholder characters that were meant to represent units of time. Additionally, some of the placeholders were optional, and some of them were dependant upon the presence of other optional placeholders.
+The option string for this primitive consisted of place-holder characters that were meant to represent units of time. Additionally, some of the place-holders were optional, and some of them were dependant upon the presence of other optional place-holders.
 
-To correct this situation, the placeholders were promoted to proper primitives. These new primitives are HOUR, MINUTE, SECOND, and FRACSEC. Appropriate options were created to handle the valid scenarios.
+To correct this situation, the place-holders were promoted to proper primitives. These new primitives are HOUR, MINUTE, SECOND, and FRACSEC. Appropriate options were created to handle the valid scenarios.
 #### USER_DEFINED (added)
-Many primitives in the standard allowed for a "user defined" option, where the user could effectively enter any value, and it would be valid. This primitive was created to properly handle that user definied value, by making it an actual option.
+Many primitives in the standard allowed for a "user defined" option, where the user could effectively enter any value, and it would be valid. This primitive was created to properly handle that user defined value, by making it an actual option.
 #### YEAR_GREG (modified)
 Refer to the notes for YEAR_GREG_BC. Note that this primitive was not actually modified, it is now just used as an option in less other primitives.
 #### YEAR_GREG_BC (added)
