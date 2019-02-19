@@ -72,10 +72,10 @@ If the definition is to include a nested primitive, the sub-primitive's label mu
 A nested primitive's label can be matched from within a definition by the regex pattern `<([^>]+)>`
 
 If the definition is to include a tag reference, the tag's label must be wrapped in %% characters, eg `%BIRT%`.
-A tag reference's label can be matched from within a definition by the regex pattern `{([^}]+)}`
+A tag reference's label can be matched from within a definition by the regex pattern `%([^%]+)%`
 
 If the definition is to include a term reference (refer below), the term's label must be wrapped in {} characters, eg `{ABT}`.
-A term reference's label can be matched from within a definition by the regex pattern `%([^%]+)%`
+A term reference's label can be matched from within a definition by the regex pattern `{([^}]+)}`
 
 All other text within a definition is presumed to be either simple formatting characters (spaces, commas, etc), or words that have a universally known meaning, eg ` AND `. Some primitives only specify simple words, such as GEDCOM 5.5.1's LANGUAGE_ID primitive that has options such as `English`.
 Due to the aforementioned constraints, these remastered standards do not allow strings/words/labels to contain the following characters: <>%{}|
