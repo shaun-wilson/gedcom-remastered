@@ -35,8 +35,8 @@ n HEAD {1:1}
 +2 [CONT|CONC] <GEDCOM_CONTENT_DESCRIPTION> {0:M}
 SUBMISSION_RECORD:=
 The sending system uses a submission record to send instructions and information to the receiving system. TempleReady processes submission records to determine which temple the cleared records should be directed to. The submission record is also used for communication between Ancestral File download requests and TempleReady. Each GEDCOM transmission file should have only one submission record. Multiple submissions are handled by creating separate GEDCOM transmission files.
-n @XREF:SUBN@ SUBN {1:1}
-+1 SUBM @XREF:SUBM@ {0:1}
+n @<XREF:SUBN>@ SUBN {1:1}
++1 SUBM @<XREF:SUBM>@ {0:1}
 +1 FAMF <NAME_OF_FAMILY_FILE> {0:1}
 +1 TEMP <TEMPLE_CODE> {0:1}
 +1 ANCE <GENERATIONS_OF_ANCESTORS> {0:1}
@@ -88,7 +88,7 @@ The individual record is a compilation of facts, known or discovered, about an i
 The normal lineage links are shown through the use of pointers from the individual to a family through either the FAMC tag or the FAMS tag. The FAMC tag provides a pointer to a family where this person is a child. The FAMS tag provides a pointer to a family where this person is a spouse or parent. The <<CHILD_TO_FAMILY_LINK>> structure contains a FAMC pointer which is required to show any child to parent linkage for pedigree navigation. The <<CHILD_TO_FAMILY_LINK>> structure also indicates whether the pedigree link represents a birth lineage, an adoption lineage, or a sealing lineage.
 Linkage between a child and the family they belonged to at the time of an event can also be shown by a FAMC pointer subordinate to the appropriate event. For example, a FAMC pointer subordinate to an adoption event indicates a relationship to family by adoption. Biological parents can be shown by a FAMC pointer subordinate to the birth event(optional).
 Other associations or relationships are represented by the ASSOciation tag. The person's relation or association is the person being pointed to. The association or relationship is stated by the value on the subordinate RELA line.
-n @XREF:INDI@ INDI {1:1}
+n @<XREF:INDI>@ INDI {1:1}
 +1 RESN <RESTRICTION_NOTICE> {0:1}
 +1 <<PERSONAL_NAME_STRUCTURE>> {0:M}
 +1 SEX <SEX_VALUE> {0:1}
@@ -112,7 +112,7 @@ n @XREF:INDI@ INDI {1:1}
 +1 <<SOURCE_CITATION>> {0:M}
 +1 <<MULTIMEDIA_LINK>> {0:M}
 MULTIMEDIA_RECORD:=
-n @XREF:OBJE@ OBJE {1:1}
+n @<XREF:OBJE>@ OBJE {1:1}
 +1 FILE <MULTIMEDIA_FILE_REFN> {1:M}
 +2 FORM <MULTIMEDIA_FORMAT> {1:1}
 +3 TYPE <SOURCE_MEDIA_TYPE> {0:1}
