@@ -37,10 +37,10 @@ The order is Header, Optional Value Definitions, Description, and Terms.
 The first line of the example - the header line - specifies the primitives label, and the primitive's size constraints. This line is required.
 
 The label may contain upper case letters, numbers, underscores, and colons.<br>
-The label definition is completed with the string ":= ". This also separates the label and the size definition.<br>
+The label definition is completed with the string `:= `. This also separates the label and the size definition.<br>
 All primitives must have a size definition.<br>
 The size definition is wrapped in curly braces.<br>
-The size definition begins with the string "Size=".<br>
+The size definition begins with the string `Size=`.<br>
 One or more digits specify the minimum size of the primitive's value. 0 is a valid size (required for the NULL primitive).<br>
 A colon separates the minimum and maximum size numbers.<br>
 One or more digits specify the maximum size of the primitive's value. This number must be greater than or equal to the minimum size.
@@ -74,7 +74,7 @@ A nested primitive's label can be matched from within a definition by the regex 
 If the definition is to include a tag reference, the tag's label must be wrapped in %% characters, eg `%BIRT%`.<br>
 A tag reference's label can be matched from within a definition by the regex pattern `%([^%]+)%`
 
-If the definition is to include a term reference (refer below), the term's label must be wrapped in {} characters, eg `{ABT}`.<br>
+If the definition is to include a term reference (refer below), the term's label must be wrapped in `{}` characters, eg `{ABT}`.<br>
 A term reference's label can be matched from within a definition by the regex pattern `{([^}]+)}`
 
 All other text within a definition is presumed to be either simple formatting characters (spaces, commas, etc), or words that have a universally known meaning, eg ` AND `. Some primitives only specify simple words, such as GEDCOM 5.5.1's LANGUAGE_ID primitive that has options such as `English`.<br>
@@ -109,7 +109,7 @@ A header line is used to mark the beginning of the terms section. It is required
 The regex pattern to match a terms header line is `^Where:$`
 ##### Term Definitions
 A term definition line, such as the fifth line of the example, provides a definition for a term label.<br>
-The label and definition are separated by the characters " = ".<br>
+The label and definition are separated by the string ` = `.<br>
 A term label may not contain the following characters, as these would interfere with the pattern matching of the primitive's Optional Value Definition line (refer that section). The characters are `<>%{}|`<br>
 A term's description can contain any otherwise valid characters allowed by the remastered standards.<br>
 Term definition lines continue to accrue until either another primitive header is encountered, or the end of file is reached.
@@ -126,7 +126,7 @@ The tag and label may contain upper case letters, numbers and underscores.<br>
 The label may also contain hyphens.<br>
 The tag and the label are separated with a space.<br>
 The label is wrapped in curly braces.<br>
-The header definition is completed with the characters `:=`
+The header definition is completed with the string `:=`
 
 A tag header line can be matched with the regex pattern `^([A-Z0-9]+) {([A-Z0-9_\-]+)}:=$`
 #### Description
