@@ -4,11 +4,11 @@ A project to "remaster" the PDF GEDCOM Standard's, and transform them into human
 The original documents are rife with problems, including logical errors, inconsistent and incorrect syntax, and missing definitions. The content of the source documents (ie PDF's) has been manually copied into text files. All of the above problems have then been corrected, resulting in human-readable and computer-parsable text files.
 
 __This project does NOT correct or extend the data model of the particular GEDCOM Standard it remaster's.__
-This functionality will be developed in another project.
 
 The remaster of a standard is stored in a branch of this repository, with the name containing the version number. At this stage, only 5.5.1 has been remastered. Other standards may be remastered in the future. The readme page for each standard/branch will have further information regarding the status of the remaster.
 
-Other projects will be released in the near future that will allow these remastered standards to be used within Python 3.7+.
+A Python project has been created that will parse these Standards and make a schema model, see [GEDCOM Remastered Parser (Python)](https://github.com/shaun-wilson/gedcom-remastered-parser-python).<br>
+Other projects will be released in the near future that will enable even greater functionality.
 
 ## File Formatting
 A particular file format/syntax has been developed for these remastered standards. It is based upon the syntax in the GEDCOM 5.5.1. The syntax will remain consistent across all remastered standards, which will allow a single program/framework to work with many different data models - even user created ones.
