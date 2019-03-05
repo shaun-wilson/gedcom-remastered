@@ -4,6 +4,29 @@ This is the remaster of the GEDCOM Standard 5.5.1 Draft PDF dated 2 October 1999
 ## Structural Changes
 The following "structural" changes have been made to this standard. Note that these changes do NOT affect the data model.
 
+### Structures
+#### EVENT_DETAIL (modified)
+Refer to the notes regarding "Custom EVEN TYPE" of INDIVIDUAL_EVENT_STRUCTURE.
+#### FAMILY_EVENT_STRUCTURE (modified)
+Refer to all the notes for INDIVIDUAL_EVENT_STRUCTURE.
+#### INDIVIDUAL_ATTRIBUTE_STRUCTURE (modified)
+Refer to the notes regarding "Custom EVEN TYPE" of INDIVIDUAL_EVENT_STRUCTURE.
+#### INDIVIDUAL_EVENT_STRUCTURE (modified)
+##### Asserted Value
+Some definitions for this structure allowed for the value to be either <NULL> (which required the structure to have a sub-structure), or a "Y" flag (which indicated that the fact was asserted). The way the specification was written suggested that the null value could be used without a sub-structure, which is not a valid scenario.
+  
+To correct this, an ASSERT primitive was created to force the "Y" flag to be used. This also required extra definitions to be created, so that the ASSERT value can be used without a sub-structure, and vice-versa.
+##### Custom EVEN TYPE
+One of the defintions for this structure allowed for the EVEN tag to be used, in order to specify a custom event. However, it also required a row with the TYPE of event specified. The original definition had this sub-row contained within a sub-structure called EVENT_DETAIL, but the TYPE row was optional.
+
+This was so that the structure EVENT_DETAIL could be used with or without a custom EVEN TYPE, but this means it does not properly validate all the scenarios that it used within.
+
+Instead, the TYPE row was removed from the EVENT_DETAIL structure, and the TYPE row was added to the definitions that used EVENT_DETAIL. Additionally, the size field was modified to force the TYPE row when used as part of an EVEN row.
+#### NOTE_STRUCTURE (modified)
+The original specification allowed a <NULL> value, which suggested that the structure was valid without a pointer, text value, or sub-structures. This scenario is iteself not valid, and so the null option was removed.
+#### SOURCE_REPOSITORY_CITATION (modified)
+The original specification allowed for a <NULL> value to be used without any sub-structures, which is not valid. Instead, the definition was split into 2 distinct definitions; one that requires a pointer value but not sub-structures, and one that allows a null-value with a sub-structure.
+  
 ### Primitives
 #### AGE_AT_EVENT (modified)
 The original standard had 2 "lists" of optional value definitions, which is not allowed by remaster syntax. To resolve this, the first list which contained the greater-than and less-than symbols was promoted to a new primitive called AGE_INEQUALITY.
@@ -11,6 +34,8 @@ The original standard had 2 "lists" of optional value definitions, which is not 
 Additionally, what should have been primitives representing the digits for years, months, and days, were place-holder strings YY, MM, and DDD. These strings were spun off to their own primitives: YEARS, MONTHS, MONTHS:IN_YEAR, DAYS, DAYS:IN_YEAR, and DAYS:IN_MONTH.
 #### AGE_INEQUALITY (added)
 Refer to the notes for AGE_AT_EVENT.
+#### ASSERT (added)
+Refer to the notes regarding "Asserted Value" of INDIVIDUAL_EVENT_STRUCTURE.
 #### DATE (modified)
 This primitive was changed to use the new DATE_CALENDAR_ESCAPED primitive. Refer to the notes for DATE_CALENDAR and DATE_CALENDAR_ESCAPE.
 #### DATE_CALENDAR and DATE_CALENDAR_ESCAPE (removed)
