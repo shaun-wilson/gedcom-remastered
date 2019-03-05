@@ -49,7 +49,7 @@ ANCESTRAL_FILE_NUMBER:= {Size=1:12}
 A unique permanent record number of an individual record contained in the Family History Department's Ancestral File.
 APPROVED_SYSTEM_ID:= {Size=1:20}
 A system identification name which was obtained through the GEDCOM registration process. This name must be unique from any other product. Spaces within the name must be substituted with a 0x5F (underscore _) so as to create one word.
-ASSERT:= {Size=2:3}
+ASSERT:= {Size=1}
 [{Y}]
 A level number and a tag alone should not be used to assert data. This flag should be used to confirm an assertion.
 Where:
