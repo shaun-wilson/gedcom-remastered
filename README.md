@@ -19,8 +19,7 @@ __NOTE: THE FORMAT IS STILL BEING REFINED, AND WILL NOT BE FINALISED UNTIL AFTER
 
 ### Structures
 TBA
-### Sub-Structures
-TBA
+Note that Records and Sub-Structures are effectively Structures, the only difference being that a record is generally a top level definition (ie, a 0 level structure) with an xref-ID, whereas a sub-structure is contained as part of another structure.
 ### Primitives
     DATE_RANGE:= {Size=8:35}
     [{BEF} <DATE>|{AFT} <DATE>|{BET} <DATE> AND <DATE>]
