@@ -24,7 +24,9 @@ This was so that the structure EVENT_DETAIL could be used with or without a cust
 Instead, the TYPE row was removed from the EVENT_DETAIL structure, and the TYPE row was added to the definitions that used EVENT_DETAIL. Additionally, the size field was modified to force the TYPE row when used as part of an EVEN row.
 #### NOTE_STRUCTURE (modified)
 The original specification allowed a <NULL> value, which suggested that the structure was valid without a pointer, text value, or sub-structures. This scenario is iteself not valid, and so the null option was removed.
-
+#### SOURCE_REPOSITORY_CITATION (modified)
+The original specification allowed for a <NULL> value to be used without any sub-structures, which is not valid. Instead, the definition was split into 2 distinct definitions; one that requires a pointer value but not sub-structures, and one that allows a null-value with a sub-structure.
+  
 ### Primitives
 #### AGE_AT_EVENT (modified)
 The original standard had 2 "lists" of optional value definitions, which is not allowed by remaster syntax. To resolve this, the first list which contained the greater-than and less-than symbols was promoted to a new primitive called AGE_INEQUALITY.
