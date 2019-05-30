@@ -183,10 +183,10 @@ EVENT_TYPE_CITED_FROM:= {Size=1:15}
 [<EVENT_ATTRIBUTE_TYPE>]
 A code that indicates the type of event which was responsible for the source entry being recorded. This will allow a prioritized best view choice and a determination of the certainty associated with the source used in asserting the cited fact.
 EVENT_TYPE_FAMILY:= {Size=3:4}
-[%ANUL%|%CENS%|%DIV%|%DIVF%|%ENGA%|%MARB%|%MARC%|%MARL%|%MARR%|%MARS%|%EVEN%]
+[%ANUL%|%CENS%|%DIV%|%DIVF%|%ENGA%|%MARB%|%MARC%|%MARL%|%MARR%|%MARS%]
 A code used to indicate the type of family event. The definition is the same as the corresponding event tag.
 EVENT_TYPE_INDIVIDUAL:= {Size=3:4}
-[%ADOP%|%BAPM%|%BARM%|%BASM%|%BIRT%|%BLES%|%BURI%|%CENS%|%CHR%|%CHRA%|%CONF%|%CREM%|%DEAT%|%EMIG%|%FCOM%|%GRAD%|%IMMI%|%NATU%|%ORDN%|%PROB%|%RETI%|%WILL%|%EVEN%]
+[%ADOP%|%BAPM%|%BARM%|%BASM%|%BIRT%|%BLES%|%BURI%|%CENS%|%CHR%|%CHRA%|%CONF%|%CREM%|%DEAT%|%EMIG%|%FCOM%|%GRAD%|%IMMI%|%NATU%|%ORDN%|%PROB%|%RETI%|%WILL%]
 A code used to indicate the type of family event. The definition is the same as the corresponding event tag.
 EVENTS_RECORDED:= {Size=1:90}
 [<EVENT_ATTRIBUTE_TYPE>|<EVENTS_RECORDED>, <EVENT_ATTRIBUTE_TYPE>]
