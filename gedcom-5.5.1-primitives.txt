@@ -57,7 +57,7 @@ Y = yes, confirm the assertion.
 ATTRIBUTE_DESCRIPTOR:= {Size=1:90}
 Text describing a particular characteristic or attribute assigned to an individual. This attribute value is assigned to the FACT tag. The classification of this specific attribute or fact is specified by the value of the subordinate TYPE tag selected from the EVENT_DETAIL structure.
 ATTRIBUTE_TYPE:= {Size=1:4}
-[%CAST%|%EDUC%|%NATI%|%OCCU%|%PROP%|%RELI%|%RESI%|%TITL%|%FACT%]
+[%CAST%|%EDUC%|%FACT%|%NATI%|%OCCU%|%PROP%|%RELI%|%RESI%|%TITL%]
 An attribute which may have caused name, addresses, phone numbers, family listings to be recorded.
 Its application is in helping to classify sources used for information.
 AUTOMATED_RECORD_ID:= {Size=1:12}
@@ -183,10 +183,10 @@ EVENT_TYPE_CITED_FROM:= {Size=1:15}
 [<EVENT_ATTRIBUTE_TYPE>]
 A code that indicates the type of event which was responsible for the source entry being recorded. This will allow a prioritized best view choice and a determination of the certainty associated with the source used in asserting the cited fact.
 EVENT_TYPE_FAMILY:= {Size=3:4}
-[%ANUL%|%CENS%|%DIV%|%DIVF%|%ENGA%|%MARR%|%MARB%|%MARC%|%MARL%|%MARS%|%EVEN%]
+[%ANUL%|%CENS%|%DIV%|%DIVF%|%ENGA%|%MARB%|%MARC%|%MARL%|%MARR%|%MARS%|%EVEN%]
 A code used to indicate the type of family event. The definition is the same as the corresponding event tag.
 EVENT_TYPE_INDIVIDUAL:= {Size=3:4}
-[%ADOP%|%BIRT%|%BAPM%|%BARM%|%BASM%|%BLES%|%BURI%|%CENS%|%CHR%|%CHRA%|%CONF%|%CREM%|%DEAT%|%EMIG%|%FCOM%|%GRAD%|%IMMI%|%NATU%|%ORDN%|%RETI%|%PROB%|%WILL%|%EVEN%]
+[%ADOP%|%BAPM%|%BARM%|%BASM%|%BIRT%|%BLES%|%BURI%|%CENS%|%CHR%|%CHRA%|%CONF%|%CREM%|%DEAT%|%EMIG%|%FCOM%|%GRAD%|%IMMI%|%NATU%|%ORDN%|%PROB%|%RETI%|%WILL%|%EVEN%]
 A code used to indicate the type of family event. The definition is the same as the corresponding event tag.
 EVENTS_RECORDED:= {Size=1:90}
 [<EVENT_ATTRIBUTE_TYPE>|<EVENTS_RECORDED>, <EVENT_ATTRIBUTE_TYPE>]
@@ -466,7 +466,7 @@ privacy = Indicate that information concerning this record is not present due to
 ROLE_DESCRIPTOR:= {Size=1:25}
 A word or phrase that identifies a person's role in an event being described. This should be the same word or phrase, and in the same language, that the recorder used to define the role in the actual record.
 ROLE_IN_EVENT:= {Size=1:15}
-[%CHIL%|%HUSB%|%WIFE%|%MOTH%|%FATH%|%SPOU%|(<ROLE_DESCRIPTOR>)]
+[%CHIL%|%FATH%|%HUSB%|%MOTH%|%SPOU%|%WIFE%|(<ROLE_DESCRIPTOR>)]
 Indicates what role this person played in the event that is being cited in this context.
 ROMANIZED_TYPE:= {Size=5:30}
 [pinyin|romaji|wadegiles|<USER_DEFINED>]
