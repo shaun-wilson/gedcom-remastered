@@ -81,7 +81,7 @@ CHARACTER_SET:= {Size=1:8}
 [ANSEL|UTF-8|UNICODE|ASCII]
 A code value that represents the character set to be used to interpret this data. Currently, the preferred character set is ANSEL, which includes ASCII as a subset. UNICODE is not widely supported by most operating systems; therefore, GEDCOM produced using the UNICODE character set will be limited in its interchangeability for a while but should eventually provide the international flexibility that is desired.
 CHILD_LINKAGE_STATUS:= {Size=1:15}
-[challenged|disproven|proven]
+[{challenged}|{disproven}|{proven}]
 A status code that allows passing on the users opinion of the status of a child to family link.
 Where:
 challenged = Linking this child to this family is suspect, but the linkage has been neither proven nor disproven.
